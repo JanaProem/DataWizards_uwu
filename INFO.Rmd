@@ -1,0 +1,14 @@
+---
+title: "INFO"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Datensatz-Quellen:
+- RottenTomatoe
+  https://www.kaggle.com/heyueyuan/rottentomatoesmoviesandcriticsdatasets
+- IMDB
+  https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows
