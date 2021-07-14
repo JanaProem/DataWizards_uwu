@@ -4,6 +4,7 @@ description: |
   DataWizards
 output_dir: "_site"
 navbar:
+  logo: images/DataWizard_rund.png
   right:
     - text: "Home"
       href: index.html
