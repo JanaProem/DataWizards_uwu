@@ -4,23 +4,23 @@
 
 .distill-site-header .logo img {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     max-height: 100px;
 }
 
 .distill-site-header {
-    height: 100px;
+    height: 70px;
 }
 
 
 .distill-site-header .title {
 position: relative;
-transform: translateY(-70%);
+transform: translateY(-45%);
 }
 
 .distill-site-header .nav-right {
-    top: 25%;
+    top: 15%;
     position: relative;
 }
 
