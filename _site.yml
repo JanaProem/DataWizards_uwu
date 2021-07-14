@@ -1,10 +1,11 @@
 name: "DataWizards_uwu"
 title: "DataWizards"
+theme: theme.css
 description: |
   DataWizards
 output_dir: "_site"
 navbar:
-  logo: images/DataWizard_rund.png
+  logo: images/DataWizard_simple.png
   right:
     - text: "Home"
       href: index.html

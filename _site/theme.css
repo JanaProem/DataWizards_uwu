@@ -1,0 +1,29 @@
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+
+.distill-site-header .logo img {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    max-height: 70px;
+}
+
+.distill-site-header {
+    height: 70px;
+}
+
+
+.distill-site-header .title {
+position: relative;
+transform: translateY(-70%);
+}
+
+.distill-site-header .nav-right {
+    top: 25%;
+    position: relative;
+}
+
+d-title{
+  margin-top: 50px;
+}
