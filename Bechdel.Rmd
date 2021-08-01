@@ -9,9 +9,52 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 
 library(usethis)
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
+```
+
+```{r, echo = FALSE, Bechdel Ranking - Datenvorbereitung}
+# Trennung bei Länder-Kombinationen und Entfernung NAs
+bechdel %>%
+  separate_rows(country, sep = ", ") %>%
+  group_by(country) %>%
+  drop_na(country) -> bechdel2
+
+# Anzahl Filme pro Land
+bechdel2 %>%
+  group_by(country) %>%
+  count(country) -> bechdel_anzahlFilme
+bechdel_anzahlFilme %>%
+  rename("Anzahl" = "n") -> bechdel_anzahlFilme
+
+# Anzahl Filme, die die Bechdel-Bewertung FAIL haben, pro Land
+bechdel2 %>%
+  group_by(country) %>%
+  count(binary) %>%
+  filter(binary == "FAIL") -> bechdel_fail
+bechdel_fail %>%
+  rename("AnzahlFails" = "n") -> bechdel_fail
+
+# Zusammenfassung in einen Datensatz
+merge(bechdel_fail, bechdel_anzahlFilme) -> bechdel_countriesFail
+
+bechdel_countriesFail %>%
+  mutate(ProzentFail = round((AnzahlFails/Anzahl*100), digits = 2)) %>% 
+  filter(Anzahl > 11) -> bechdel_countriesFail
+```
+
+# Bechdel-Ranking
+```{r}
+bechdel_countriesFail %>%
+ggplot() +
+  aes(x = ProzentFail, y = reorder(country, ProzentFail), xmin = 0, xmax = 100) +
+  geom_col() +
+  scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+  labs(x = "Durchfallquote (in %)",
+       y = NULL)
 ```
 
