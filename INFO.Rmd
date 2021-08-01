@@ -8,7 +8,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Datensatz-Quellen:
-- RottenTomatoe
-  https://www.kaggle.com/heyueyuan/rottentomatoesmoviesandcriticsdatasets
-- IMDB
-  https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows
+- Netflix
+  https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-20/netflix_titles.csv
+- Bechdel
+  https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv
+- Equality Index
+  https://www.cfr.org/legal-barriers/country-rankings/

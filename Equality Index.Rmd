@@ -13,7 +13,7 @@ library(usethis)
 # https://rstudio.github.io/distill/website.html
 library("openxlsx")
 
-Equalityxlsx <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
+equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
                       sheet = 2)
 ```
 
