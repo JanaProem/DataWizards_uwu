@@ -12,6 +12,6 @@ library(usethis)
 # Learn more about creating websites with Distill at:
 # https://rstudio.github.io/distill/website.html
 
-rotten <- read.csv("data/rotten_tomatoes_movies.csv")
+netflix_titles <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-20/netflix_titles.csv')
 
 ```
