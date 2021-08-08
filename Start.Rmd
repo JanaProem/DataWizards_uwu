@@ -18,7 +18,7 @@ library("openxlsx")
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 ```
 
-```{r, echo = FALSE, Bechdel Ranking - Datenvorbereitung}
+```{r, Bechdel Ranking - Datenvorbereitung}
 # Trennung bei Länder-Kombinationen und Entfernung NAs
 bechdel %>%
   separate_rows(country, sep = ", ") %>%
