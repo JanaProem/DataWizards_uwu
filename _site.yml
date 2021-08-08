@@ -9,10 +9,10 @@ navbar:
   right:
     - text: "Home"
       href: Start.html
+    - text: "Laender"
+      menu:
+        - text: "Neuseeland"
+          href: New_Zealand.html
     - text: "About"
       href: about.html
-    - text: "Neuseeland"
-      href: New_Zealand.html
-    - text: "Neuseeland"
-      href: TEST.html
 output: distill::distill_article
