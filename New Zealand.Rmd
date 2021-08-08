@@ -1,0 +1,35 @@
+---
+title: "Neuseeland"
+description: |
+  Gleichstellungsindex (erreichte Punktzahl): 93,6
+  Anzahl Filme: 14
+  Den Bechdel-Test _nicht_ bestandene Filme: 12
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(usethis)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library("openxlsx")
+
+bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
+# Trennung bei Länder-Kombinationen und Entfernung NAs
+bechdel %>%
+  separate_rows(country, sep = ", ") %>%
+  group_by(country) %>%
+  drop_na(country) -> bechdel2
+
+equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
+                      sheet = 2)
+```
+
+# Ergebnisse beim Gleichstellungsindex
+# Ergebnisse beim Bechdel-Test
+# Allgemeine Situation der Gleichstellung
+# Vergleich
+# Fazit
