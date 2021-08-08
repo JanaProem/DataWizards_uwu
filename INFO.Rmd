@@ -14,3 +14,14 @@ Datensatz-Quellen:
   https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv
 - Equality Index
   https://www.cfr.org/legal-barriers/country-rankings/
+
+
+Titel-Zeile:
+  - Land (groß)
+  - Score, Anzahl Filme, Durchgefallene Filme
+
+Kapitel:
+  - Equality Score
+  - Bechdel-Test
+  - Allgemeine Equality-Situation
+  - Vergleich/Zusammenfassung/Fazit
