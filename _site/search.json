@@ -6,7 +6,7 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T19:12:48+02:00"
+      "last_modified": "2021-08-08T19:45:33+02:00"
     },
     {
       "path": "index.html",
@@ -14,14 +14,14 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T19:12:49+02:00"
+      "last_modified": "2021-08-08T19:45:34+02:00"
     },
     {
       "path": "INFO.html",
       "title": "INFO",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nDataWizards\r\n\r\n\r\nHome\r\nAbout\r\nNeuseeland\r\nNeuseeland\r\n☰\r\n\r\n\r\n  \r\n    \r\n      \r\n        \r\n        \r\n        \r\n      \r\n      \r\n    \r\n    \r\n      \r\n  Home\r\n\r\n\r\n  About\r\n\r\n\r\n  Neuseeland\r\n\r\n\r\n  Neuseeland\r\n\r\n      \r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\nINFO\r\n\r\n\r\n\r\n\r\nDatensatz-Quellen: - Netflix https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-20/netflix_titles.csv - Bechdel https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv - Equality Index https://www.cfr.org/legal-barriers/country-rankings/\r\nTitel-Zeile: - Land (groß) - Score, Anzahl Filme, Durchgefallene Filme\r\nKapitel: - Equality Score - Bechdel-Test - Allgemeine Equality-Situation - Vergleich/Zusammenfassung/Fazit\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// add bootstrap table styles to pandoc tables\r\nfunction bootstrapStylePandocTables() {\r\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\r\n}\r\n$(document).ready(function () {\r\n  bootstrapStylePandocTables();\r\n});\r\n\r\n\r\n\r\n$(document).ready(function () {\r\n  window.buildTabsets(\"TOC\");\r\n});\r\n\r\n$(document).ready(function () {\r\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\r\n    $(this).parent().toggleClass('nav-tabs-open');\r\n  });\r\n});\r\n\r\n  (function () {\r\n    var script = document.createElement(\"script\");\r\n    script.type = \"text/javascript\";\r\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\r\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\r\n  })();\r\n",
-      "last_modified": "2021-08-08T19:12:51+02:00"
+      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n  \r\n    \r\n      \r\n        \r\n        \r\n        \r\n      \r\n      \r\n    \r\n    \r\n      \r\n  Home\r\n\r\n\r\n  About\r\n\r\n\r\n  Neuseeland\r\n\r\n\r\n  Neuseeland\r\n\r\n      \r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\nINFO\r\n\r\n\r\n\r\n\r\nDatensatz-Quellen: - Netflix https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-20/netflix_titles.csv - Bechdel https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv - Equality Index https://www.cfr.org/legal-barriers/country-rankings/\r\nTitel-Zeile: - Land (groß) - Score, Anzahl Filme, Durchgefallene Filme\r\nKapitel: - Equality Score - Bechdel-Test - Allgemeine Equality-Situation - Vergleich/Zusammenfassung/Fazit\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// add bootstrap table styles to pandoc tables\r\nfunction bootstrapStylePandocTables() {\r\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\r\n}\r\n$(document).ready(function () {\r\n  bootstrapStylePandocTables();\r\n});\r\n\r\n\r\n\r\n$(document).ready(function () {\r\n  window.buildTabsets(\"TOC\");\r\n});\r\n\r\n$(document).ready(function () {\r\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\r\n    $(this).parent().toggleClass('nav-tabs-open')\r\n  });\r\n});\r\n\r\n  (function () {\r\n    var script = document.createElement(\"script\");\r\n    script.type = \"text/javascript\";\r\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\r\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\r\n  })();\r\n",
+      "last_modified": "2021-08-08T19:45:35+02:00"
     },
     {
       "path": "Netflix.html",
@@ -29,15 +29,15 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T19:12:59+02:00"
+      "last_modified": "2021-08-08T19:45:37+02:00"
     },
     {
       "path": "New_Zealand.html",
       "title": "Neuseeland",
       "description": "Gleichstellungsindex (erreichte Punktzahl): 93,6   \nAnzahl Filme: 14\nDen Bechdel-Test _nicht_ bestandene Filme: 12\n",
       "author": [],
-      "contents": "\r\nErgebnisse beim Gleichstellungsindex\r\n\r\n\r\n\r\n\r\nHindernisse\r\n\r\n\r\n\r\n\r\n::: {.panelset} ::: {.panel} ### Finanzieller Arbeitsanreiz {.panel-name}\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\n\r\nGrundstücknutzung\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nKreditwürdigkeit\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\n::: {.panel} ### Schutz vor Gewalt {.panel-name}\r\n::: {.panel} ### Zugang zu Arbeit {.panel-name}\r\nZugang zu Behörden\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nZugang zur Justiz\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nGleichstellungsindex (Gesamtpunktzahl)\r\nErgebnisse beim Bechdel-Test\r\nAllgemeine Situation der Gleichstellung\r\nVergleich\r\nFazit\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T19:13:02+02:00"
+      "contents": "\r\nErgebnisse beim Gleichstellungsindex\r\n\r\n\r\n\r\n\r\nHindernisse\r\nFinanzieller Arbeitsanreiz\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nGrundstücknutzung\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nKreditwürdigkeit\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nSchutz vor Gewalt\r\nZugang zu Arbeit\r\nZugang zu Behörden\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nZugang zur Justiz\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nGleichstellungsindex (Gesamtpunktzahl)\r\nErgebnisse beim Bechdel-Test\r\nAllgemeine Situation der Gleichstellung\r\nVergleich\r\nFazit\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-08T19:45:40+02:00"
     },
     {
       "path": "Start.html",
@@ -45,14 +45,7 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\nBechdel-Ranking\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T19:13:05+02:00"
-    },
-    {
-      "path": "TEST.html",
-      "title": "TEST",
-      "author": [],
-      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nDataWizards\r\n\r\n\r\nHome\r\nAbout\r\nNeuseeland\r\nNeuseeland\r\n☰\r\n\r\n\r\n  \r\n    \r\n      \r\n        \r\n        \r\n        \r\n      \r\n      \r\n    \r\n    \r\n      \r\n  Home\r\n\r\n\r\n  About\r\n\r\n\r\n  Neuseeland\r\n\r\n\r\n  Neuseeland\r\n\r\n      \r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\nTEST\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n👋 Hey!\r\nThis is tab number 1 . 🌟 Check the following tabs for some unsolicited advice 🌟 👆\r\n\r\n\r\nUnsolicited advice 1\r\nThis is tab number 2\r\n\r\n\r\n\r\nUnsolicited advice 2\r\nThis is tab number 3\r\n\r\n\r\n\r\nUnsolicited advice 3\r\nThis is tab number 4\r\n\r\n\r\n\r\n🔚 Ending tab\r\nThis is tab number 5. Thank you for reading this far.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// add bootstrap table styles to pandoc tables\r\nfunction bootstrapStylePandocTables() {\r\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\r\n}\r\n$(document).ready(function () {\r\n  bootstrapStylePandocTables();\r\n});\r\n\r\n\r\n\r\n$(document).ready(function () {\r\n  window.buildTabsets(\"TOC\");\r\n});\r\n\r\n$(document).ready(function () {\r\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\r\n    $(this).parent().toggleClass('nav-tabs-open');\r\n  });\r\n});\r\n\r\n  (function () {\r\n    var script = document.createElement(\"script\");\r\n    script.type = \"text/javascript\";\r\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\r\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\r\n  })();\r\n",
-      "last_modified": "2021-08-08T19:13:07+02:00"
+      "last_modified": "2021-08-08T19:45:41+02:00"
     }
   ],
   "collections": []
