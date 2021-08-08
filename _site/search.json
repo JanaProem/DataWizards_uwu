@@ -6,7 +6,7 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-01T15:13:26+02:00"
+      "last_modified": "2021-08-08T12:59:19+02:00"
     },
     {
       "path": "index.html",
@@ -14,22 +14,30 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-01T15:13:27+02:00"
+      "last_modified": "2021-08-08T12:59:20+02:00"
     },
     {
       "path": "INFO.html",
       "title": "INFO",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nDataWizards\r\n\r\n\r\nHome\r\nAbout\r\n☰\r\n\r\n\r\n  \r\n    \r\n      \r\n        \r\n        \r\n        \r\n      \r\n      \r\n    \r\n    \r\n      \r\n  Home\r\n\r\n\r\n  About\r\n\r\n      \r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\nINFO\r\n\r\n\r\n\r\n\r\nDatensatz-Quellen: - RottenTomatoe https://www.kaggle.com/heyueyuan/rottentomatoesmoviesandcriticsdatasets - IMDB https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// add bootstrap table styles to pandoc tables\r\nfunction bootstrapStylePandocTables() {\r\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\r\n}\r\n$(document).ready(function () {\r\n  bootstrapStylePandocTables();\r\n});\r\n\r\n\r\n\r\n$(document).ready(function () {\r\n  window.buildTabsets(\"TOC\");\r\n});\r\n\r\n$(document).ready(function () {\r\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\r\n    $(this).parent().toggleClass('nav-tabs-open');\r\n  });\r\n});\r\n\r\n  (function () {\r\n    var script = document.createElement(\"script\");\r\n    script.type = \"text/javascript\";\r\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\r\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\r\n  })();\r\n",
-      "last_modified": "2021-08-01T15:13:27+02:00"
+      "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nDataWizards\r\n\r\n\r\nHome\r\nAbout\r\n☰\r\n\r\n\r\n  \r\n    \r\n      \r\n        \r\n        \r\n        \r\n      \r\n      \r\n    \r\n    \r\n      \r\n  Home\r\n\r\n\r\n  About\r\n\r\n      \r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\nINFO\r\n\r\n\r\n\r\n\r\nDatensatz-Quellen: - Netflix https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-20/netflix_titles.csv - Bechdel https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv - Equality Index https://www.cfr.org/legal-barriers/country-rankings/\r\nTitel-Zeile: - Land (groß) - Score, Anzahl Filme, Durchgefallene Filme\r\nKapitel: - Equality Score - Bechdel-Test - Allgemeine Equality-Situation - Vergleich/Zusammenfassung/Fazit\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// add bootstrap table styles to pandoc tables\r\nfunction bootstrapStylePandocTables() {\r\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\r\n}\r\n$(document).ready(function () {\r\n  bootstrapStylePandocTables();\r\n});\r\n\r\n\r\n\r\n$(document).ready(function () {\r\n  window.buildTabsets(\"TOC\");\r\n});\r\n\r\n$(document).ready(function () {\r\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\r\n    $(this).parent().toggleClass('nav-tabs-open');\r\n  });\r\n});\r\n\r\n  (function () {\r\n    var script = document.createElement(\"script\");\r\n    script.type = \"text/javascript\";\r\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\r\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\r\n  })();\r\n",
+      "last_modified": "2021-08-08T12:59:20+02:00"
     },
     {
-      "path": "RottenTomatoes.html",
+      "path": "Netflix.html",
       "title": "DataWizards",
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-01T15:13:28+02:00"
+      "last_modified": "2021-08-08T12:59:22+02:00"
+    },
+    {
+      "path": "Start.html",
+      "title": "DataWizards",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\nBechdel-Ranking\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-08T12:59:28+02:00"
     }
   ],
   "collections": []
