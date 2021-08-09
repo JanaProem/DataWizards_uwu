@@ -6,22 +6,22 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T21:38:58+02:00"
+      "last_modified": "2021-08-09T12:43:05+02:00"
     },
     {
       "path": "index.html",
       "title": "DataWizards",
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T21:39:00+02:00"
+      "contents": "\r\n\r\n\r\n\r\nBechdel-Ranking\r\n\r\n\r\n\r\nGleichstellungsindex\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-09T12:43:08+02:00"
     },
     {
       "path": "INFO.html",
       "title": "INFO",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nDataWizards\r\n\r\n\r\nHome\r\n\r\n\r\nLaender\r\n \r\n▾\r\n\r\n\r\nNeuseeland\r\n\r\n\r\nAbout\r\n☰\r\n\r\n\r\n  \r\n    \r\n      \r\n        \r\n        \r\n        \r\n      \r\n      \r\n    \r\n    \r\n      \r\n  Home\r\n\r\n\r\n  \r\n    Laender\r\n     \r\n    \r\n  \r\n  \r\n      Neuseeland\r\n    \r\n  \r\n\r\n  About\r\n\r\n      \r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\nINFO\r\n\r\n\r\n\r\n\r\nDatensatz-Quellen: - Netflix https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-20/netflix_titles.csv - Bechdel https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv - Equality Index https://www.cfr.org/legal-barriers/country-rankings/\r\nTitel-Zeile: - Land (groß) - Score, Anzahl Filme, Durchgefallene Filme\r\nKapitel: - Equality Score - Bechdel-Test - Allgemeine Equality-Situation - Vergleich/Zusammenfassung/Fazit\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// add bootstrap table styles to pandoc tables\r\nfunction bootstrapStylePandocTables() {\r\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\r\n}\r\n$(document).ready(function () {\r\n  bootstrapStylePandocTables();\r\n});\r\n\r\n\r\n\r\n$(document).ready(function () {\r\n  window.buildTabsets(\"TOC\");\r\n});\r\n\r\n$(document).ready(function () {\r\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\r\n    $(this).parent().toggleClass('nav-tabs-open');\r\n  });\r\n});\r\n\r\n  (function () {\r\n    var script = document.createElement(\"script\");\r\n    script.type = \"text/javascript\";\r\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\r\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\r\n  })();\r\n",
-      "last_modified": "2021-08-08T21:39:00+02:00"
+      "last_modified": "2021-08-09T12:43:09+02:00"
     },
     {
       "path": "Netflix.html",
@@ -29,23 +29,15 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T21:39:02+02:00"
+      "last_modified": "2021-08-09T12:43:10+02:00"
     },
     {
       "path": "New_Zealand.html",
       "title": "Neuseeland",
-      "description": "Gleichstellungsindex (erreichte Punktzahl): 93,6   \n12 der 14 produzierten Filme sind beim Bechdel-Test durchgefallen\n",
+      "description": "Gleichstellungsindex (Gesamtpunktzahl): 93,6   \n12 der 14 produzierten Filme sind beim Bechdel-Test durchgefallen\n",
       "author": [],
-      "contents": "\r\nErgebnisse beim Gleichstellungsindex\r\n\r\n\r\n\r\n\r\nHindernisse\r\n\r\n\r\n\r\n\r\n\r\nFinanzieller Arbeitsanreiz\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nGrundstücknutzung\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nKreditwürdigkeit\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nSchutz vor Gewalt\r\nZugang zu Arbeit\r\nZugang zu Behörden\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nZugang zur Justiz\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nGleichstellungsindex (Gesamtpunktzahl)\r\n\r\n\r\nErgebnisse beim Bechdel-Test\r\nAllgemeine Situation der Gleichstellung\r\nVergleich\r\nFazit\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T21:39:05+02:00"
-    },
-    {
-      "path": "Start.html",
-      "title": "DataWizards",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
-      "author": [],
-      "contents": "\r\n\r\n\r\n\r\nBechdel-Ranking\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T21:39:07+02:00"
+      "contents": "\r\n\r\nContents\r\nErgebnisse beim Gleichstellungsindex\r\nHindernisse\r\n\r\nErgebnisse beim Bechdel-Test\r\nAllgemeine Situation der Gleichstellung\r\nVergleich\r\nFazit\r\n\r\nErgebnisse beim Gleichstellungsindex\r\n\r\n\r\n\r\nHindernisse\r\n\r\n.panelset{--panel-tab-active-foreground: #9370db;--panel-tab-hover-foreground: gray;}\r\n\r\n\r\n\r\nFinanzieller Arbeitsanreiz\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nGrundstücknutzung\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nKreditwürdigkeit\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nSchutz vor Gewalt\r\nZugang zu Arbeit\r\nZugang zu Behörden\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nZugang zur Justiz\r\nNach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.\r\nGleichstellungsindex (Gesamtpunktzahl)\r\n\r\n\r\nErgebnisse beim Bechdel-Test\r\nAllgemeine Situation der Gleichstellung\r\nVergleich\r\nFazit\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-09T12:43:12+02:00"
     },
     {
       "path": "TEST.html",
@@ -53,7 +45,15 @@
       "description": "Gleichstellungsindex (erreichte Punktzahl): 93,6   \nAnzahl Filme: 14\nDen Bechdel-Test _nicht_ bestandene Filme: 12\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n\r\nPANEL 1\r\n\r\n\r\nknitr::include_graphics('https://hypocolypse.github.io/assets/banner.png')\r\n\r\n\r\n\r\n\r\nThis is a tab.\r\nPANEL 2\r\n\r\n\r\nknitr::include_graphics('https://hypocolypse.github.io/assets/banner.png')\r\n\r\n\r\n\r\n\r\nPANEL 3\r\n\r\n\r\nknitr::include_graphics('https://hypocolypse.github.io/assets/banner.png')\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-08T21:39:09+02:00"
+      "last_modified": "2021-08-09T12:43:14+02:00"
+    },
+    {
+      "path": "Vorlage.html",
+      "title": "DataWizards",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-09T12:43:14+02:00"
     }
   ],
   "collections": []

@@ -9,8 +9,72 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 
 library(usethis)
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library("openxlsx")
 
+bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 ```
 
+```{r, Bechdel Ranking - Datenvorbereitung}
+# Trennung bei Länder-Kombinationen und Entfernung NAs
+bechdel %>%
+  separate_rows(country, sep = ", ") %>%
+  group_by(country) %>%
+  drop_na(country) -> bechdel2
+
+# Anzahl Filme pro Land
+bechdel2 %>%
+  group_by(country) %>%
+  count(country) -> bechdel_anzahlFilme
+bechdel_anzahlFilme %>%
+  rename("Anzahl" = "n") -> bechdel_anzahlFilme
+
+# Anzahl Filme, die die Bechdel-Bewertung FAIL haben, pro Land
+bechdel2 %>%
+  group_by(country) %>%
+  count(binary) %>%
+  filter(binary == "FAIL") -> bechdel_fail
+bechdel_fail %>%
+  rename("AnzahlFails" = "n") -> bechdel_fail
+
+# Zusammenfassung in einen Datensatz
+merge(bechdel_fail, bechdel_anzahlFilme) -> bechdel_countriesFail
+
+bechdel_countriesFail %>%
+  mutate(ProzentFail = round((AnzahlFails/Anzahl*100), digits = 2)) %>% 
+  filter(Anzahl > 11) -> bechdel_countriesFail
+```
+
+## Bechdel-Ranking
+```{r}
+bechdel_countriesFail %>%
+ggplot() +
+  aes(x = ProzentFail, y = reorder(country, desc(ProzentFail)), xmin = 0, xmax = 100) +
+  geom_col() +
+  scale_x_continuous(limits = c(0, 100), 
+                     breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+  labs(x = "Durchfallquote (in %)",
+       y = NULL) 
+```
+## Gleichstellungsindex
+```{r}
+equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
+                      sheet = 2)
+
+# in der Excel die Länder umbenennen: United Kingdoms zu UK & United States zu USA
+countries <- c("New Zealand","Czech Republic", "Hong Kong", "China", "Italy", "Japan", "Ireland", "USA", "France", "Germany", "UK", "Canada", "Spain", "Australia")
+equality %>%
+  filter(Economy %in% countries) -> equality
+
+equality %>%
+ggplot() +
+  aes(x = OVERALL.AVERAGE.SCORE, y = reorder(Economy, OVERALL.AVERAGE.SCORE), xmin = 0, xmax = 100) +
+  geom_col() +
+  scale_x_continuous(limits = c(0, 100), 
+                     breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+  labs(x = "Gleichstellungsindex (Gesamtpunktzahl)",
+       y = NULL)
+```

@@ -8,7 +8,7 @@ navbar:
   logo: images/DataWizard_simple.png
   right:
     - text: "Home"
-      href: Start.html
+      href: index.html
     - text: "Laender"
       menu:
         - text: "Neuseeland"
