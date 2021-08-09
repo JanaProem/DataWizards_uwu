@@ -11,8 +11,6 @@ navbar:
       href: index.html
     - text: "Laender"
       menu:
-        - text: "Amerika"
-          href: USA.html
         - text: "Australien"
           href: Australia.html
         - text: "China"
@@ -21,6 +19,12 @@ navbar:
           href: Deutschland.html
         - text: "England"
           href: UK.html
+        - text: "Irland"
+          href: Irland.html
+        - text: "Italien"
+          href: Italy.html
+        - text: "Japan"
+          href: Japan.html
         - text: "Kanada"
           href: Canada.html
         - text: "Neuseeland"
@@ -29,6 +33,8 @@ navbar:
           href: Spain.html
         - text: "Tschechien"
           href: Czech_Republic.html
+        - text: "USA"
+          href: USA.html
     - text: "About"
       href: about.html
 output: distill::distill_article
