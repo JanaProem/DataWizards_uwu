@@ -1,5 +1,5 @@
 ---
-title: "Canada"
+title: "Kanada"
 description: |
   Gleichstellungsindex (erreichte Punktzahl): 94,5   
   50 der 97 produzierten Filme sind beim Bechdel-Test durchgefallen

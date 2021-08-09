@@ -17,6 +17,8 @@ navbar:
           href: Australia.html
         - text: "China"
           href: China.html
+        - text: "Deutschland"
+          href: Deutschland.html
         - text: "England"
           href: UK.html
         - text: "Kanada"
