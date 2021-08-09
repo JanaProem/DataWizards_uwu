@@ -13,12 +13,20 @@ navbar:
       menu:
         - text: "Amerika"
           href: USA.html
+        - text: "Australien"
+          href: Australia.html
+        - text: "China"
+          href: China.html
         - text: "England"
           href: UK.html
+        - text: "Kanada"
+          href: Canada.html
         - text: "Neuseeland"
           href: New_Zealand.html
         - text: "Spanien"
           href: Spain.html
+        - text: "Tschechien"
+          href: Czech_Republic.html
     - text: "About"
       href: about.html
 output: distill::distill_article

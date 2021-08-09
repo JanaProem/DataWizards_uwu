@@ -3,7 +3,9 @@ title: "Australien"
 description: |
   Gleichstellungsindex (erreichte Punktzahl): 94,9   
   24 der 48 produzierten Filme sind beim Bechdel-Test durchgefallen
-output: html_document
+output:
+  distill::distill_article:
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
