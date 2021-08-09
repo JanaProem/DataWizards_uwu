@@ -1,0 +1,163 @@
+---
+title: "Japan"
+description: |
+  Gleichstellungsindex (erreichte Punktzahl): 66,7   
+  14 der 24 produzierten Filme sind beim Bechdel-Test durchgefallen
+output:
+  distill::distill_article:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(usethis)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library("openxlsx")
+library(knitr)
+
+bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
+# Trennung bei Länder-Kombinationen und Entfernung NAs
+bechdel %>%
+  separate_rows(country, sep = ", ") %>%
+  group_by(country) %>%
+  drop_na(country) -> bechdel2
+
+equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
+                      sheet = 2)
+```
+
+# Ergebnisse beim Gleichstellungsindex
+```{r, layout='1-page'}
+equality_long <- equality %>%
+  filter(Economy == "Japan") %>%
+  select(ends_with("score"))
+
+# Umbenennung der Skalen
+names(equality_long) <- c("Gleichstellungsindex (Gesamtpunktzahl)", "Zugang zu Behörden", "Grundstücknutzung", "Zugang zur Justiz", "Finanzieller Arbeitsanreiz", "Kreditwürdigkeit", "Zugang zu Arbeit", "Schutz vor Gewalt")
+  
+pivot_longer(equality_long,
+            cols = everything(),
+            names_to = "name", values_to = "score") -> equality_long
+equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Gesamtpunktzahl)", "ja", "nein")) -> equality_long
+
+library(forcats)
+
+p <- equality_long %>%
+  ggplot() +
+    aes(y = fct_relevel(name, "Gleichstellungsindex (Gesamtpunktzahl)", 
+                        "Zugang zur Justiz", "Zugang zu Behörden", 
+                        "Zugang zu Arbeit", "Schutz vor Gewalt", 
+                        "Kreditwürdigkeit", "Grundstücknutzung", 
+                        "Finanzieller Arbeitsanreiz"), 
+        x = score, 
+        xmin = 0, xmax = 100,
+        fill = ToHighlight) +
+    geom_col() +
+    labs(title = "Japan", x = "Erreichte Punktzahl", y = "") +
+    scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+    scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
+
+ggsave("images/Japan_equality.png", plot = p, height = 4, width = 9)
+```
+
+![](images/Japan_equality.png)
+
+
+
+### Hindernisse 
+
+
+```{r panelset, layout='l-body-outset', echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::l-body-outset
+
+::::: {.panelset}
+
+::: {.panel}
+
+#### Finanzieller Arbeitsanreiz {.panel-name}
+
+Müttern wird nach dem Mutterschaftsurlaub kein gleichwertiger Arbeitsplatz garantiert.
+
+Die Kosten für die Kinderbetreuung sind nicht steuerlich absetzbar.
+:::
+
+::: {.panel}
+
+#### Grundstücknutzung {.panel-name}
+
+Nach dem Gleichstellungsindex vom CFR hat Japan keine Hindernisse in diesem Bereich.
+:::
+
+::: {.panel}
+
+#### Kreditwürdigkeit {.panel-name}
+Versorgungsunternehmen geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+
+Das Gesetz verbietet keine Diskriminierung durch Kreditgeber aufgrund des Geschlechts oder der sexuellen Orientierung.
+
+Das Gesetz verbietet keine Diskriminierung durch Kreditgeber aufgrund des Familienstandes.
+:::
+
+::: {.panel}
+
+#### Schutz vor Gewalt {.panel-name}
+Es gibt kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+Es gibt kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+
+Es gibt keine strafrechtlichen Sanktionen für sexuelle Belästigung am Arbeitsplatz.
+
+Es gibt keine zivilrechtlichen Rechtsbehelfe für sexuelle Belästigung am Arbeitsplatz.
+
+Es gibt kein Gesetz, das Vergewaltigung in der Ehe ausdrücklich unter Strafe stellt.
+
+Es gibt keine klaren strafrechtlichen Sanktionen für häusliche Gewalt.
+
+Mit elterlicher Zustimmung oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter achtzehn Jahren.
+:::
+
+::: {.panel}
+
+#### Zugang zu Arbeit {.panel-name}
+Das Gesetz schreibt kein gleiches Entgelt für gleichwertige Arbeit vor.
+
+Frauen dürfen nicht in denselben Branchen arbeiten wie Männer.
+
+Es gibt keinen gesetzlich vorgeschriebenen bezahlten Vaterschaftsurlaub.
+:::
+
+::: {.panel}
+
+#### Zugang zu Behörden {.panel-name}
+
+Nach dem Gleichstellungsindex vom CFR hat Japan keine Hindernisse in diesem Bereich.
+:::
+
+::: {.panel}
+
+#### Zugang zur Justiz {.panel-name}
+Das Gesetz sieht keine Antidiskriminierungskommission vor.
+:::
+
+::: {.panel}
+
+#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
+66,7
+:::
+
+:::::
+
+:::
+
+
+# Ergebnisse beim Bechdel-Test
+# Allgemeine Situation der Gleichstellung
+# Vergleich
+# Fazit
