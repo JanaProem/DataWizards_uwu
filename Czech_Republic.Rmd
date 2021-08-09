@@ -55,7 +55,7 @@ p <- equality_long %>%
         xmin = 0, xmax = 100,
         fill = ToHighlight) +
     geom_col() +
-    labs(title = "Czech Republic", x = "Erreichte Punktzahl", y = "") +
+    labs(title = "Tschechien", x = "Erreichte Punktzahl", y = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
 
