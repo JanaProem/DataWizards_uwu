@@ -25,3 +25,8 @@ Kapitel:
   - Bechdel-Test
   - Allgemeine Equality-Situation
   - Vergleich/Zusammenfassung/Fazit
+
+
+Diagramm-Ideen:
+  - Balkendiagramme (spezifisch: Diagramm zum Gleichstellungsindex je Land) animieren, sodass sich die Balken erst beim Öffnen der Seite aufbaut
+  - Palette:  scale_color_continuous_sequential(Palette = "Purple-Orange")
