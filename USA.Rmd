@@ -113,10 +113,6 @@ Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Be
 #### Zugang zur Justiz {.panel-name}
 :::
 
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
-:::
-
 :::::
 
 :::

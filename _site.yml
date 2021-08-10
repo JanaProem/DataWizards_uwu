@@ -9,7 +9,7 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Laender"
+    - text: "Ergebnisse nach Land"
       menu:
         - text: "Australien"
           href: Australia.html
