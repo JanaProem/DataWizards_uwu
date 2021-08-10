@@ -1,7 +1,7 @@
 ---
 title: "China"
 description: |
-  Gleichstellungsindex (erreichte Punktzahl): 68,3   
+  Gleichstellungsindex (Gesamtpunktzahl): 68,3   
   9 der 12 produzierten Filme sind beim Bechdel-Test durchgefallen
 output:
   distill::distill_article:
@@ -70,65 +70,51 @@ ggsave("images/China_equality.png", plot = p, height = 4, width = 9)
 ### Hindernisse 
 
 
-```{r panelset, layout='l-body-outset', echo=FALSE}
+```{r panelset, layout='l-body', echo=FALSE}
 xaringanExtra::use_panelset()
+
+xaringanExtra::style_panelset_tabs(
+  active_foreground = "#9370db",
+  hover_foreground = "gray"
+)
 ```
 
-:::l-body-outset
+:::l-body
 
 ::::: {.panelset}
 
 ::: {.panel}
-
 #### Finanzieller Arbeitsanreiz {.panel-name}
-
-
 :::
 
 ::: {.panel}
-
 #### Grundstücknutzung {.panel-name}
-
 Nach dem Gleichstellungsindex vom CFR hat China keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
-
 #### Kreditwürdigkeit {.panel-name}
-
-
 :::
 
 ::: {.panel}
-
 #### Schutz vor Gewalt {.panel-name}
-
 :::
 
 ::: {.panel}
-
 #### Zugang zu Arbeit {.panel-name}
-
 :::
 
 ::: {.panel}
-
 #### Zugang zu Behörden {.panel-name}
-
 Nach dem Gleichstellungsindex vom CFR hat China keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
-
 #### Zugang zur Justiz {.panel-name}
-
-
 :::
 
 ::: {.panel}
-
 #### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
-
 :::
 
 :::::
@@ -136,8 +122,7 @@ Nach dem Gleichstellungsindex vom CFR hat China keine Hindernisse in diesem Bere
 :::
 
 
-# Ergebnisse beim Bechdel-Test
-# Allgemeine Situation der Gleichstellung
-# Vergleich
-# Fazit
-
+## Ergebnisse beim Bechdel-Test
+## Allgemeine Situation der Gleichstellung
+## Vergleich
+## Fazit
