@@ -1,8 +1,8 @@
 ---
-title: "USA"
+title: "Hong Kong"
 description: |
-  Gleichstellungsindex (Gesamtpunktzahl): 85,8  
-  825 der 1.472 produzierten Filme sind beim Bechdel-Test durchgefallen
+  Gleichstellungsindex (Gesamtpunktzahl): 75,5   
+  11 der 14 produzierten Filme sind beim Bechdel-Test durchgefallen
 output:
   distill::distill_article:
     toc: true
@@ -34,7 +34,7 @@ equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx",
 ## Ergebnisse beim Gleichstellungsindex
 ```{r, layout='1-page', fig.width=7, fig.height=3}
 equality_long <- equality %>%
-  filter(Economy == "USA") %>%
+  filter(Economy == "Hong Kong") %>%
   select(ends_with("score"))
 
 # Umbenennung der Skalen
@@ -62,9 +62,6 @@ equality_long %>%
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
 ```
-
-
-
 ### Hindernisse 
 
 
@@ -83,17 +80,16 @@ xaringanExtra::style_panelset_tabs(
 
 ::: {.panel}
 #### Finanzieller Arbeitsanreiz {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Bereich.
-:::
+
 
 ::: {.panel}
 #### Grundstücknutzung {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Bereich.
+Nach dem Gleichstellungsindex vom CFR hat Hong Kong keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Bereich.
+
 :::
 
 ::: {.panel}
@@ -106,11 +102,12 @@ Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Be
 
 ::: {.panel}
 #### Zugang zu Behörden {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Bereich.
+Nach dem Gleichstellungsindex vom CFR hat Hong Kong keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
+Nach dem Gleichstellungsindex vom CFR hat Hong Kong keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
