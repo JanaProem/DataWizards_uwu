@@ -82,6 +82,11 @@ xaringanExtra::style_panelset_tabs(
 
 ::: {.panel}
 #### Finanzieller Arbeitsanreiz {.panel-name}
+1. Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
+
+2. Frauen wird nach dem Mutterschutz keine gleichwertige Position garantiert.
+
+3. Arbeitgeber müssen keinen Urlaub gewähren, damit sich Angestellte um erkrankte Angehörige kümmern können.
 :::
 
 ::: {.panel}
@@ -91,14 +96,35 @@ Nach dem Gleichstellungsindex vom CFR hat China keine Hindernisse in diesem Bere
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
+1. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Geschlecht verbietet.
+
+2. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
+
+3. Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 :::
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+
+2.Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Es existiert keine gesetzlich geregelte, bezahlte Elternzeit.
+
+2. Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
+
+3. Eltern können nicht flexibel arbeiten.
+
+4. Frauen können nicht auf die gleiche Weise wie Männer nicht in Bereichen arbeiten, die als gefährlich, mühsam oder moralisch unangemessen betrachtet werden.
+
+5. Frauen dürfen nicht in denselben Branchen arbeiten wie Männer.
+
+6. Frauen ist es bei der Arbeit nicht erlaubt dieselben Tätigkeiten auszuüben wie Männern.
+
+7. Das Renteneintrittsalter von Frauen und Männern ist nicht identisch. 
 :::
 
 ::: {.panel}
@@ -108,6 +134,7 @@ Nach dem Gleichstellungsindex vom CFR hat China keine Hindernisse in diesem Bere
 
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
+1. Das Gesetz sieht keine Antidiskriminierungskommission vor.
 :::
 
 :::::

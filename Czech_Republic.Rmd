@@ -94,14 +94,27 @@ Nach dem Gleichstellungsindex vom CFR hat Tschechien keine Hindernisse in diesem
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
+1. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
+
+2. Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+
+3. Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 :::
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+2. Es existiert kein Gesetz, das Vergewaltigungen in der Ehe verbietet.
+
+3. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Frauen ist es bei der Arbeit nicht erlaubt dieselben Tätigkeiten auszuüben wie Männern.
+
+2. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
 :::
 
 ::: {.panel}
@@ -111,6 +124,7 @@ Nach dem Gleichstellungsindex vom CFR hat Tschechien keine Hindernisse in diesem
 
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
+1. Es existiert kein Bagatellgericht oder Schnellverfahren für kleinere Anträge. Solche werden oft von kleineren Unternehmen (häufig in Besitz von Frauen) genutzt, um Verfahren und Anträge zu beschleunigen oder Gerichtskosten zu reduzieren.
 :::
 
 :::::
