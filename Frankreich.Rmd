@@ -93,15 +93,26 @@ Nach dem Gleichstellungsindex vom CFR hat Frankreich keine Hindernisse in diesem
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
+1. Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+
+2. Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 
 :::
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+
+2. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Eltern können nicht flexibel arbeiten.
+
+2. Frauen ist es nicht erlaubt dieselben Tätigkeiten auf der Arbeit auszuüben wie Männern.
 :::
 
 ::: {.panel}
@@ -112,10 +123,6 @@ Nach dem Gleichstellungsindex vom CFR hat Frankreich keine Hindernisse in diesem
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
 Nach dem Gleichstellungsindex vom CFR hat Frankreich keine Hindernisse in diesem Bereich.
-:::
-
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
 :::
 
 :::::
