@@ -81,6 +81,7 @@ xaringanExtra::style_panelset_tabs(
 
 ::: {.panel}
 #### Finanzieller Arbeitsanreiz {.panel-name}
+1. Frauen wird nach dem Mutterschutz keine gleichwertige Position garantiert.
 
 :::
 
@@ -91,15 +92,35 @@ Nach dem Gleichstellungsindex vom CFR hat Deutschland keine Hindernisse in diese
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
+1. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
+
 
 :::
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
 :::
+1. Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+
+2. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+3. Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
+
+4. Es gibt keine klaren strafrechtlichen Folgen für häusliche Gewalt.
+
+5. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
+
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Der Staat übernimmt nicht die gesamten Kosten aller Leistungen im Mutterschutzurlaub. 
+
+2. Unterschiede im gesetzlich geregelten, bezahlten Urlaub für Männer und Frauen belasten die Arbeitgeber.
+
+3.Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
+
+4. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
+
 :::
 
 ::: {.panel}
@@ -110,10 +131,6 @@ Nach dem Gleichstellungsindex vom CFR hat Deutschland keine Hindernisse in diese
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
 Nach dem Gleichstellungsindex vom CFR hat Deutschland keine Hindernisse in diesem Bereich.
-:::
-
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
 :::
 
 :::::
