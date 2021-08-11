@@ -18,6 +18,7 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(knitr)
+library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -30,8 +31,8 @@ equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx",
                       sheet = 2)
 ```
 
-# Ergebnisse beim Gleichstellungsindex
-```{r, layout='1-page'}
+## Ergebnisse beim Gleichstellungsindex
+```{r, layout='1-page', fig.width=7, fig.height=3}
 equality_long <- equality %>%
   filter(Economy == "Australia") %>%
   select(ends_with("score"))
@@ -46,7 +47,7 @@ equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Ges
 
 library(forcats)
 
-p <- equality_long %>%
+equality_long %>%
   ggplot() +
     aes(y = fct_relevel(name, "Gleichstellungsindex (Gesamtpunktzahl)", 
                         "Zugang zur Justiz", "Zugang zu Behörden", 
@@ -81,6 +82,7 @@ xaringanExtra::style_panelset_tabs(
 
 ::: {.panel}
 #### Finanzieller Arbeitsanreiz {.panel-name}
+1. Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
 :::
 
 ::: {.panel}
@@ -95,10 +97,14 @@ Nach dem Gleichstellungsindex vom CFR hat Australien keine Hindernisse in diesem
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+2. Mit Zustimmung der Eltern oder gerichtlicher Genehmigung beläuft sich das Heiratsalter für Frauen auf unter 18 Jahren.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Es existiert kein gesetzlich geregelter, bezahlter Mutterschutzurlaub. Es existiert jedoch bezahlte Elternzeit.
 :::
 
 ::: {.panel}
@@ -109,10 +115,6 @@ Nach dem Gleichstellungsindex vom CFR hat Australien keine Hindernisse in diesem
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
 Nach dem Gleichstellungsindex vom CFR hat Australien keine Hindernisse in diesem Bereich.
-:::
-
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
 :::
 
 :::::

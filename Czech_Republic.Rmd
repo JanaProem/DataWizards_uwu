@@ -18,6 +18,7 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(knitr)
+library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -30,8 +31,8 @@ equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx",
                       sheet = 2)
 ```
 
-# Ergebnisse beim Gleichstellungsindex
-```{r, layout='1-page'}
+## Ergebnisse beim Gleichstellungsindex
+```{r, layout='1-page', fig.width=7, fig.height=3}
 equality_long <- equality %>%
   filter(Economy == "Czech Republic") %>%
   select(ends_with("score"))
@@ -46,7 +47,7 @@ equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Ges
 
 library(forcats)
 
-p <- equality_long %>%
+equality_long %>%
   ggplot() +
     aes(y = fct_relevel(name, "Gleichstellungsindex (Gesamtpunktzahl)", 
                         "Zugang zur Justiz", "Zugang zu Behörden", 
@@ -93,14 +94,27 @@ Nach dem Gleichstellungsindex vom CFR hat Tschechien keine Hindernisse in diesem
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
+1. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
+
+2. Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+
+3. Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 :::
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+2. Es existiert kein Gesetz, das Vergewaltigungen in der Ehe verbietet.
+
+3. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Frauen ist es bei der Arbeit nicht erlaubt dieselben Tätigkeiten auszuüben wie Männern.
+
+2. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
 :::
 
 ::: {.panel}
@@ -110,10 +124,7 @@ Nach dem Gleichstellungsindex vom CFR hat Tschechien keine Hindernisse in diesem
 
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
-:::
-
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
+1. Es existiert kein Bagatellgericht oder Schnellverfahren für kleinere Anträge. Solche werden oft von kleineren Unternehmen (häufig in Besitz von Frauen) genutzt, um Verfahren und Anträge zu beschleunigen oder Gerichtskosten zu reduzieren.
 :::
 
 :::::

@@ -18,6 +18,7 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(knitr)
+library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -30,8 +31,8 @@ equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx",
                       sheet = 2)
 ```
 
-# Ergebnisse beim Gleichstellungsindex
-```{r, layout='1-page'}
+## Ergebnisse beim Gleichstellungsindex
+```{r, layout='1-page', fig.width=7, fig.height=3}
 equality_long <- equality %>%
   filter(Economy == "Canada") %>%
   select(ends_with("score"))
@@ -46,7 +47,7 @@ equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Ges
 
 library(forcats)
 
-p <- equality_long %>%
+equality_long %>%
   ggplot() +
     aes(y = fct_relevel(name, "Gleichstellungsindex (Gesamtpunktzahl)", 
                         "Zugang zur Justiz", "Zugang zu Behörden", 
@@ -60,11 +61,7 @@ p <- equality_long %>%
     labs(title = "Kanada", x = "Erreichte Punktzahl", y = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
-
-ggsave("images/Canada_equality.png", plot = p, height = 4, width = 9)
 ```
-
-![](images/Canada_equality.png)
 
 
 ### Hindernisse 
@@ -100,10 +97,19 @@ Nach dem Gleichstellungsindex vom CFR hat Kanada keine Hindernisse in diesem Ber
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
+
+2. Häusliche Gewalt ist nicht verboten, jedoch existieren Strafen gegen Ehepartner und Familienmitglieder.
+
+3. Es existiert kein Gesetz, das sexuelle Belästigungen in Schulen verbietet.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Frauen erhalten zwei Drittel ihres Gehalts in den ersten 14 Wochen ihrer Elternzeit.
+Eltern können nicht flexibel arbeiten.
+
+2. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
 :::
 
 ::: {.panel}
@@ -114,10 +120,6 @@ Nach dem Gleichstellungsindex vom CFR hat Kanada keine Hindernisse in diesem Ber
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
 Nach dem Gleichstellungsindex vom CFR hat Kanada keine Hindernisse in diesem Bereich.
-:::
-
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
 :::
 
 :::::
