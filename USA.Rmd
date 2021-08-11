@@ -98,10 +98,24 @@ Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Be
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+2. Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
+
+3. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Es existiert kein gesetzlich geregelter, bezahlter Mutterschutzurlaub. 
+
+2. Es existiert keine gesetzlich geregelte, bezahlte Elternzeit.
+
+3. Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
+
+4. Eltern können nicht flexibel arbeiten.
+
+5. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
 :::
 
 ::: {.panel}
@@ -111,6 +125,7 @@ Nach dem Gleichstellungsindex vom CFR hat die USA keine Hindernisse in diesem Be
 
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
+1. Das Gesetz sieht keine Antidiskriminierungskommission vor.
 :::
 
 :::::

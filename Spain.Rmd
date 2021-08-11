@@ -18,7 +18,6 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(knitr)
-library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -93,14 +92,19 @@ Nach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
+1. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
 :::
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
+
+2. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Es existiert keine gesetzlich geregelte, bezahlte Elternzeit.
 :::
 
 ::: {.panel}
@@ -111,10 +115,6 @@ Nach dem Gleichstellungsindex vom CFR hat Spanien keine Hindernisse in diesem Be
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
 Nach dem Gleichstellungsindex vom CFR hat Spanien keine Hindernisse in diesem Bereich.
-:::
-
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
 :::
 
 :::::
