@@ -30,3 +30,9 @@ Kapitel:
 Diagramm-Ideen:
   - Balkendiagramme (spezifisch: Diagramm zum Gleichstellungsindex je Land) animieren, sodass sich die Balken erst beim Öffnen der Seite aufbaut
   - Palette:  scale_color_continuous_sequential(Palette = "Purple-Orange")
+  - Punktdiagramm: Gründe für das Durchfallen (Jana Bechdel)
+  - Boxplot/Liniendiagramm/Punktdiagramm: Budget
+  - Anzahl Fails/Pass Liniendiagramm (Haris Bechdel)
+  - Bechdeltest: Cleantest (großer Datensatz, nicht der von 0-3 geht) 
+  - Genres nach Fail und Pass vergleichen (MK Bechdel)
+  - Facet Wrap Density Plot (Genre + Gross) (Bechdel VM) -> sehr schön
