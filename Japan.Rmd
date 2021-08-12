@@ -83,9 +83,9 @@ xaringanExtra::use_panelset()
 
 #### Finanzieller Arbeitsanreiz {.panel-name}
 
-Müttern wird nach dem Mutterschaftsurlaub kein gleichwertiger Arbeitsplatz garantiert.
+Frauen wird nach dem Mutterschutz keine gleichwertige Position garantiert.
 
-Die Kosten für die Kinderbetreuung sind nicht steuerlich absetzbar.
+Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
 :::
 
 ::: {.panel}
@@ -100,37 +100,37 @@ Nach dem Gleichstellungsindex vom CFR hat Japan keine Hindernisse in diesem Bere
 #### Kreditwürdigkeit {.panel-name}
 Versorgungsunternehmen geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 
-Das Gesetz verbietet keine Diskriminierung durch Kreditgeber aufgrund des Geschlechts oder der sexuellen Orientierung.
+DEs existiert kein Gesetz, das Gläubigern die Diskriminierung nach Geschlecht oder der sexuellen Orientierung.
 
-Das Gesetz verbietet keine Diskriminierung durch Kreditgeber aufgrund des Familienstandes.
+Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
 :::
 
 ::: {.panel}
 
 #### Schutz vor Gewalt {.panel-name}
-Es gibt kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
 
-Es gibt kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
 
 Es gibt keine strafrechtlichen Sanktionen für sexuelle Belästigung am Arbeitsplatz.
 
 Es gibt keine zivilrechtlichen Rechtsbehelfe für sexuelle Belästigung am Arbeitsplatz.
 
-Es gibt kein Gesetz, das Vergewaltigung in der Ehe ausdrücklich unter Strafe stellt.
+Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
 
-Es gibt keine klaren strafrechtlichen Sanktionen für häusliche Gewalt.
+Es existiert kein eindeutiges Gesetz, das häusliche Gewalt verbietet.
 
-Mit elterlicher Zustimmung oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter achtzehn Jahren.
+Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 
 #### Zugang zu Arbeit {.panel-name}
-Das Gesetz schreibt kein gleiches Entgelt für gleichwertige Arbeit vor.
+Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
 
 Frauen dürfen nicht in denselben Branchen arbeiten wie Männer.
 
-Es gibt keinen gesetzlich vorgeschriebenen bezahlten Vaterschaftsurlaub.
+Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
 :::
 
 ::: {.panel}
