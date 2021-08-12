@@ -83,7 +83,7 @@ xaringanExtra::use_panelset()
 
 #### Finanzieller Arbeitsanreiz {.panel-name}
 
-Die Kosten für die Kinderbetreuung sind nicht steuerlich absetzbar.
+Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
 :::
 
 ::: {.panel}
@@ -104,11 +104,11 @@ Versorgungsunternehmen stellen keine Informationen für private Kreditbüros ode
 ::: {.panel}
 
 #### Schutz vor Gewalt {.panel-name}
-Es gibt kein Gesetz, das die Vergewaltigung in der Ehe ausdrücklich unter Strafe stellt.
+Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
 
-Es gibt keine klaren strafrechtlichen Sanktionen für häusliche Gewalt.
+Es gibt keine klaren strafrechtlichen Folgen für häusliche Gewalt.
 
-Mit elterlicher Zustimmung oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter achtzehn Jahren.
+Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
@@ -116,7 +116,7 @@ Mit elterlicher Zustimmung oder richterlicher Genehmigung liegt das Mindestheira
 #### Zugang zu Arbeit {.panel-name}
 Frauen erhalten weniger als zwei Drittel ihres Lohns für die ersten vierzehn Wochen ihres Urlaubs bzw. für die Dauer des Urlaubs, wenn dieser kürzer ist.
 
-Es gibt keinen gesetzlich vorgeschriebenen bezahlten Elternurlaub.
+Es existiert keine gesetzlich geregelte, bezahlte Elternzeit.
 
 Eltern können nicht flexibel arbeiten.
 
@@ -142,6 +142,5 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 
 
 # Ergebnisse beim Bechdel-Test
-# Allgemeine Situation der Gleichstellung
 # Vergleich
 # Fazit

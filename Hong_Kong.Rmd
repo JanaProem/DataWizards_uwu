@@ -83,6 +83,14 @@ xaringanExtra::style_panelset_tabs(
 
 ::: {.panel}
 #### Finanzieller Arbeitsanreiz {.panel-name}
+1. Frauen wird nach dem Mutterschutz keine gleichwertige Position garantiert.
+
+2. Es wurden keine Kinderbetreuungsdienste angeboten.
+
+3. Es existiert kein Gesetz, das die Kosten für Kinderbetreuung steuerlich absetzbar macht.
+
+4. Arbeitgeber müssen keinen Urlaub gewähren, damit sich Angestellte um erkrankte Angehörige kümmern können.
+
 :::
 
 ::: {.panel}
@@ -93,14 +101,36 @@ Nach dem Gleichstellungsindex vom CFR hat Hong Kong keine Hindernisse in diesem 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
 
+1. Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+
+2. Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+
 :::
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+2. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
+
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Es existiert einen gesetzlich geregelter Mutterschaftsurlaub, der weniger als 14 Wochen dauert.
+
+2. Der Staat übernimmt nicht die gesamten Kosten aller Leistungen im Mutterschutzurlaub. 
+
+3. Unterschiede im gesetzlich geregelten, bezahlten Urlaub für Männer und Frauen belasten die Arbeitgeber.
+
+4. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
+
+5. Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
+
+6. Eltern können nicht flexibel arbeiten.
+
+7. Es existiert ein gesetzlich geregelter, bezahlter Vaterschaftsurlaub, der jedoch unter dem weltweiten Median von vier Tagen liegt.
+
 :::
 
 ::: {.panel}
@@ -111,10 +141,6 @@ Nach dem Gleichstellungsindex vom CFR hat Hong Kong keine Hindernisse in diesem 
 ::: {.panel}
 #### Zugang zur Justiz {.panel-name}
 Nach dem Gleichstellungsindex vom CFR hat Hong Kong keine Hindernisse in diesem Bereich.
-:::
-
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
 :::
 
 :::::

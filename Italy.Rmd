@@ -104,17 +104,18 @@ Versorgungsunternehmen stellen keine Informationen für private Kreditbüros ode
 ::: {.panel}
 
 #### Schutz vor Gewalt {.panel-name}
-Es gibt kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
 
 Für sexuelle Belästigung am Arbeitsplatz gibt es keine strafrechtlichen Sanktionen.
 
-Mit elterlicher Zustimmung oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter achtzehn Jahren.
+Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
+
 :::
 
 ::: {.panel}
 
 #### Zugang zu Arbeit {.panel-name}
-Es gibt einen gesetzlich vorgeschriebenen bezahlten Vaterschaftsurlaub, der jedoch unter dem weltweiten Median von vier Tagen liegt.
+Es existiert ein gesetzlich geregelter, bezahlter Vaterschaftsurlaub, der jedoch unter dem weltweiten Median von vier Tagen liegt.
 :::
 
 ::: {.panel}
@@ -136,6 +137,6 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 
 
 # Ergebnisse beim Bechdel-Test
-# Allgemeine Situation der Gleichstellung
+
 # Vergleich
 # Fazit
