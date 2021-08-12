@@ -18,7 +18,7 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(knitr)
-library(unikn)
+library(ggforce)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -58,7 +58,7 @@ equality_long %>%
         xmin = 0, xmax = 100,
         fill = ToHighlight) +
     geom_col() +
-    labs(x = "Erreichte Punktzahl", y = "") +
+    labs(x = "Erreichte Punktzahl", y = "", caption = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
 ```
@@ -69,6 +69,7 @@ equality_long %>%
 
 
 ```{r panelset, layout='l-body', echo=FALSE}
+# Erstellung eines Panelsets
 xaringanExtra::use_panelset()
 
 xaringanExtra::style_panelset_tabs(
@@ -98,10 +99,20 @@ Nach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem
 
 ::: {.panel}
 #### Schutz vor Gewalt {.panel-name}
+1. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+
+2. Es gibt keine klaren strafrechtlichen Folgen für häusliche Gewalt.
+
+3. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 #### Zugang zu Arbeit {.panel-name}
+1. Es existiert kein gesetzlich geregelter, bezahlter Mutterschutzurlaub. Es existiert jedoch bezahlte Elternzeit.
+
+2. Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
+
+3. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
 :::
 
 ::: {.panel}
@@ -114,16 +125,49 @@ Nach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem
 Nach dem Gleichstellungsindex vom CFR hat Neuseeland keine Hindernisse in diesem Bereich.
 :::
 
-::: {.panel}
-#### Gleichstellungsindex (Gesamtpunktzahl) {.panel-name}
-:::
-
 :::::
 
 :::
 
 
 ## Ergebnisse beim Bechdel-Test
-## Allgemeine Situation der Gleichstellung
+Der Großteil der Filme besteht den Bechdel-Test nicht – nur 2 von 14 Filmen erfüllen alle Kriterien. Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf über 40% der Filme zu.
+
+```{r}
+# Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
+bechdel2 %>%
+  filter(country == "New Zealand") %>% 
+  count(clean_test) -> data_kreis
+
+data_kreis$clean_test <- c("Frauen reden nur über Männer", 
+                           "Frauen reden nicht miteinander", 
+                           "Es gibt weniger als 2 Frauen", 
+                           "Film besteht alle Kriterien") # anpassen entsprechend dem Ergebnis aus Zeile 134 (data_kreis); dubious = "Bewertung ist unsicher"
+
+ggplot(data_kreis, aes(x="", y=n, fill=clean_test)) +
+      geom_bar(stat="identity", width=1) +
+      coord_polar("y", start=0) +
+      theme_minimal()+
+      geom_text(aes(label = paste0(n)), position = position_stack(vjust = 0.5)) +
+      scale_y_continuous(breaks = 0:14) +
+      labs(x = NULL, y = NULL, fill = NULL,
+           caption = "Ergebnisse des Bechdel-Test: Anzahl der Filme") +
+  theme(
+        axis.title = element_blank(), 
+        axis.ticks = element_blank(), 
+        axis.text = element_blank(),
+        panel.background = element_blank(),
+        panel.border=element_blank(),
+        plot.background = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.background = element_rect(fill = "white"),
+        plot.caption = element_text(size = 12, hjust = 0.5))
+```
+
+
+
+
 ## Vergleich
 ## Fazit
+- Sind Filme Spiegel der Gesellschaft was Gleichberechtigung angeht?

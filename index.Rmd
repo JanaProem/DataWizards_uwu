@@ -80,3 +80,20 @@ ggplot() +
   labs(x = "Gleichstellungsindex (Gesamtpunktzahl)",
        y = NULL)
 ```
+
+```{r}
+# Fails/Pass über die Jahre - Liniendiagramm
+bechdel %>% 
+  filter(country %in% countries) %>%
+  count(year, binary) %>%
+  ggplot() +
+  aes(x = year, y =  n, color = binary) +
+  geom_line()
+  
+
+```
+- generelle Zunahme von Filmen über die Jahre
+- wenige Peaks von mehr PASS als FAIL
+- grundsätzlich werden trotz Zunahme immer mehr Filme produziert, die durchfallen
+- zeigt, dass in der Filmbranche Gleichberechtigung nicht durchgesetzt ist
+- Filme als Repräsentation/Spiegel der Gesellschaft
