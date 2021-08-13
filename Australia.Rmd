@@ -123,6 +123,48 @@ Nach dem Gleichstellungsindex vom CFR hat Australien keine Hindernisse in diesem
 
 
 ## Ergebnisse beim Bechdel-Test
+Die Hälfte der Filme besteht den Bechdel-Test nicht. Vor 1995 wurden nur Filme produziert, welchen eine unsichere Bewertung zugewiesen wurde. Ab Anfang/Mitte der 1990er Jahre haben alle Bewertungen in gleichem Maße zugenommen mit einem allgemeinen Produktionspeak zum Jahrtausendwechsel. Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf 50% der durchgefallenen Filme zu.
+
+```{r layout='l-body'}
+# Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
+library(ggridges)
+
+mutate(bechdel2, criteria = recode(clean_test, 
+                          men = "Frauen reden nur über Männer", 
+                          notalk = "Frauen reden nicht miteinander", 
+                          nowomen = "Es gibt weniger als 2 Frauen", 
+                          ok = "Film besteht alle Kriterien",
+                          dubious = "Bewertung ist unsicher")) -> bechdel2
+bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Bewertung ist unsicher", 
+                                                           "Es gibt weniger als 2 Frauen",
+                                                           "Frauen reden nicht miteinander",
+                                                           "Frauen reden nur über Männer",
+                                                           "Film besteht alle Kriterien"))
+
+# Überblick über die Anzahl der Kriterien des Lands
+# bechdel2 %>%
+#  filter(country == "Australia") %>% 
+#  count(criteria)
+
+bechdel2 %>%
+  filter(country == "Australia") %>%
+  ggplot(aes(x = year, y = criteria, fill = criteria)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none") +
+  labs(x = "", y = "", 
+       caption = 
+          "Ergebnisse des Bechdel-Test: Anzahl der Filme über die Jahre") +
+  theme(
+    axis.text=element_text(size=10),
+    plot.caption = element_text(size = 12, vjust = -1)
+  )
+
+```
+
+
+
+
 ## Allgemeine Situation der Gleichstellung
 ## Vergleich
 ## Fazit

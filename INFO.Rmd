@@ -36,3 +36,6 @@ Diagramm-Ideen:
   - Genres nach Fail und Pass vergleichen (MK Bechdel) ++++
   - Facet Wrap Density Plot (Genre + Gross) (Bechdel VM) -> sehr schön
   - Anzahl Fails/Pass Liniendiagramm über die Jahre (Haris Bechdel) -> auf Startseite
+
+Design-Ideen
+  - Blocksatz für Textabsätze
