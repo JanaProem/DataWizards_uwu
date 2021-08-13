@@ -162,7 +162,7 @@ ggplot(data_kreis, aes(x="", y=n, fill=criteria)) +
       geom_text(aes(label = paste0(n)), position = position_stack(vjust = 0.5)) +
       scale_y_continuous(breaks = 0:14) +
       labs(x = NULL, y = NULL, fill = NULL,
-           caption = "Ergebnisse des Bechdel-Test: Anzahl der Filme") +
+           caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme") +
   theme(
         axis.title = element_blank(), 
         axis.ticks = element_blank(), 
@@ -179,7 +179,7 @@ ggplot(data_kreis, aes(x="", y=n, fill=criteria)) +
 Insgesamt gibt es am meisten Adventure- und Action-Filme, welche jedoch allesamt den Bechdel-Test nicht bestehen. Lediglich bei Drama-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist.
 
 ```{r}
-# Facet Wrap-Vergleich der bestandenen/durchgefallenen Filme pro Genre
+# Vergleich der bestandenen/durchgefallenen Filme pro Genre
 bechdel2 %>%
   filter(country == "New Zealand") %>%
   group_by(binary) %>%

@@ -154,7 +154,7 @@ bechdel2 %>%
   theme(legend.position = "none") +
   labs(x = "", y = "", 
        caption = 
-          "Ergebnisse des Bechdel-Test: Anzahl der Filme über die Jahre") +
+          "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
   theme(
     axis.text=element_text(size=10),
     plot.caption = element_text(size = 12, vjust = -1)
