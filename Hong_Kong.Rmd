@@ -25,9 +25,8 @@ bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 bechdel %>%
   separate_rows(country, sep = ", ") %>%
   group_by(country) %>%
-  drop_na(country) %>%
-  separate_rows(genre, sep = ", ") %>%
-  drop_na(genre) -> bechdel2
+  drop_na(country) -> bechdel2
+
 
 equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
                       sheet = 2)
@@ -195,11 +194,13 @@ ggplot(data_kreis, aes(x="", y=n, fill=criteria)) +
         plot.caption = element_text(size = 12, hjust = 0.5))
 ```
 
-Insgesamt gibt es am meisten Adventure-, Action und Comedy-Filme, welche jedoch allesamt den Bechdel-Test nicht bestehen. Lediglich bei Drama-und Adventure-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist.
+Insgesamt gibt es am meisten Adventure-, Action und Comedy-Filme, welche jedoch allesamt den Bechdel-Test nicht bestehen. Lediglich bei Drama- und Adventure-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist.
 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
 bechdel2 %>%
+  separate_rows(genre, sep = ", ") %>%
+  drop_na(genre) %>%
   filter(country == "Hong Kong") %>%
   group_by(binary) %>%
   count(genre) -> bechdel_genre
