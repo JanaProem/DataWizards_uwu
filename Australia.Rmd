@@ -136,10 +136,10 @@ mutate(bechdel2, criteria = recode(clean_test,
                           ok = "Film besteht alle Kriterien",
                           dubious = "Bewertung ist unsicher")) -> bechdel2
 bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Bewertung ist unsicher", 
-                                                           "Es gibt weniger als 2 Frauen",
-                                                           "Frauen reden nicht miteinander",
+                                                           "Film besteht alle Kriterien", 
                                                            "Frauen reden nur über Männer",
-                                                           "Film besteht alle Kriterien"))
+                                                           "Frauen reden nicht miteinander",
+                                                           "Es gibt weniger als 2 Frauen"))
 
 # Überblick über die Anzahl der Kriterien des Lands
 # bechdel2 %>%
@@ -153,8 +153,20 @@ bechdel2 %>%
   theme_ridges() + 
   theme(legend.position = "none") +
   labs(x = "", y = "", 
-       caption = 
-          "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
+       caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
+  theme(
+    axis.text=element_text(size=10),
+    plot.caption = element_text(size = 12, vjust = -1)
+  )
+
+bechdel2 %>%
+  filter(country == "Australia") %>%
+  ggplot(aes(x = year, y = criteria, fill = criteria)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none") +
+  labs(x = "", y = "", 
+       caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
   theme(
     axis.text=element_text(size=10),
     plot.caption = element_text(size = 12, vjust = -1)

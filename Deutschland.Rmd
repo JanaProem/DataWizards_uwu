@@ -25,9 +25,10 @@ bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 bechdel %>%
   separate_rows(country, sep = ", ") %>%
   group_by(country) %>%
-  drop_na(country) %>%
-  separate_rows(genre, sep = ", ") %>%
-  drop_na(genre) -> bechdel2
+  drop_na(country) -> bechdel2
+
+equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
+                      sheet = 2)
 ```
 
 ## Ergebnisse beim Gleichstellungsindex
@@ -136,9 +137,10 @@ Nach dem Gleichstellungsindex vom CFR hat Deutschland keine Hindernisse in diese
 
 :::
 
-Der Großteil der Filme besteht den Bechdel-Test nicht. Ab Anfang/Mitte der 1990er Jahre haben alle Bewertungen zugenommen mit einem allgemeinen Produktionspeak zum Jahrtausendwechsel. Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf über 30% der durchgefallenen Filme zu.
 
 ## Ergebnisse beim Bechdel-Test
+Der Großteil der Filme besteht den Bechdel-Test nicht. Ab Anfang/Mitte der 1990er Jahre haben alle Bewertungen zugenommen mit einem allgemeinen Produktionspeak zum Jahrtausendwechsel. Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf über 30% der durchgefallenen Filme zu.
+
 ```{r layout='l-body'}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
 library(ggridges)
@@ -150,14 +152,14 @@ mutate(bechdel2, criteria = recode(clean_test,
                           ok = "Film besteht alle Kriterien",
                           dubious = "Bewertung ist unsicher")) -> bechdel2
 bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Bewertung ist unsicher", 
-                                                           "Es gibt weniger als 2 Frauen",
-                                                           "Frauen reden nicht miteinander",
+                                                           "Film besteht alle Kriterien", 
                                                            "Frauen reden nur über Männer",
-                                                           "Film besteht alle Kriterien"))
+                                                           "Frauen reden nicht miteinander",
+                                                           "Es gibt weniger als 2 Frauen"))
 
 # Überblick über die Anzahl der Kriterien des Lands
 # bechdel2 %>%
-#  filter(country == "France") %>% 
+#  filter(country == "Germany") %>% 
 #  count(criteria)
 
 bechdel2 %>%
@@ -176,17 +178,13 @@ bechdel2 %>%
 
 ```
 
-
-
-
-
 Insgesamt gibt es am meisten Drama-, Action-, und Thriller- Filme, welche jedoch allesamt den Bechdel-Test nicht bestehen. Lediglich bei Romance-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist.
- 
-
 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
 bechdel2 %>%
+  separate_rows(genre, sep = ", ") %>%
+  drop_na(genre) %>%
   filter(country == "Germany") %>%
   group_by(binary) %>%
   count(genre) -> bechdel_genre
@@ -210,5 +208,9 @@ bechdel_genre %>%
 
 
 ```
+
+
+
+
 ## Vergleich
 ## Fazit

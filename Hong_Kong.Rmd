@@ -27,7 +27,6 @@ bechdel %>%
   group_by(country) %>%
   drop_na(country) -> bechdel2
 
-
 equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
                       sheet = 2)
 ```
@@ -163,17 +162,17 @@ mutate(bechdel2, criteria = recode(clean_test,
                           dubious = "Bewertung ist unsicher")) -> bechdel2
 
 # Sortierung der Ergebnisse
-bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Bewertung ist unsicher", 
-                                                           "Es gibt weniger als 2 Frauen",
+bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Es gibt weniger als 2 Frauen",
                                                            "Frauen reden nicht miteinander",
                                                            "Frauen reden nur über Männer",
-                                                           "Film besteht alle Kriterien"))
+                                                           "Film besteht alle Kriterien",
+                                                           "Bewertung ist unsicher"))
 
 bechdel2 %>%
   filter(country == "Hong Kong") %>% 
   count(criteria) -> data_kreis
 
-ggplot(data_kreis, aes(x="", y=n, fill=criteria)) +
+ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
