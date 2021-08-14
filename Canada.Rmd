@@ -18,6 +18,7 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(knitr)
+library(ggforce)
 library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
@@ -58,7 +59,7 @@ equality_long %>%
         xmin = 0, xmax = 100,
         fill = ToHighlight) +
     geom_col() +
-    labs(title = "Kanada", x = "Erreichte Punktzahl", y = "") +
+    labs(x = "Erreichte Punktzahl", y = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
 ```
@@ -128,6 +129,74 @@ Nach dem Gleichstellungsindex vom CFR hat Kanada keine Hindernisse in diesem Ber
 
 
 ## Ergebnisse beim Bechdel-Test
-## Allgemeine Situation der Gleichstellung
+Etwa die Hälfte der Filme besteht den Bechdel-Test nicht. Zwischen 1980 und 1990 wurden überwiegend Filme produziert, die an dem Kriterium "Frauen reden nur über Männer" gescheitert sind. Ab Mitte der 1990er Jahre nahmen Filme, die an diesem Kriterium gescheitert sind ab, jedoch stieg die Anzahl, die an den anderen beiden Kriterien gescheitert sind. Ab 2000 haben alle Bewertungen in gleichem Maße zugenommen, mit Ausnahme um das Jahr 2010 rum: Dort gab es einen sehr starken Anstieg des Kriterium "Es gibt weniger als zwei Frauen". Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf etwa 65% der durchgefallenen Filme zu.
+
+```{r layout='l-body'}
+# Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
+library(ggridges)
+
+mutate(bechdel2, criteria = recode(clean_test, 
+                          men = "Frauen reden nur über Männer", 
+                          notalk = "Frauen reden nicht miteinander", 
+                          nowomen = "Es gibt weniger als 2 Frauen", 
+                          ok = "Film besteht alle Kriterien",
+                          dubious = "Bewertung ist unsicher")) -> bechdel2
+bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Bewertung ist unsicher", 
+                                                           "Film besteht alle Kriterien", 
+                                                           "Frauen reden nur über Männer",
+                                                           "Frauen reden nicht miteinander",
+                                                           "Es gibt weniger als 2 Frauen"))
+
+# Überblick über die Anzahl der Kriterien des Lands
+#  bechdel2 %>%
+#  filter(country == "Canada") %>% 
+#  count(criteria)
+
+bechdel2 %>%
+  filter(country == "Canada") %>%
+  ggplot(aes(x = year, y = criteria, fill = criteria)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none") +
+  labs(x = "", y = "", 
+       caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
+  theme(
+    axis.text=element_text(size=10),
+    plot.caption = element_text(size = 12, vjust = -1)
+  )
+
+```
+
+Insgesamt ergibt sich ein ziemlich ausgeglichenes Verhältnis zwischen Durchfall- und Bestehensquote in allen Genres, mit Ausnahme des Genres Biography, indem alle Filme den Bechdel-Test nicht bestehen. 
+
+```{r}
+# Vergleich der bestandenen/durchgefallenen Filme pro Genre
+bechdel2 %>%
+  separate_rows(genre, sep = ", ") %>%
+  drop_na(genre) %>%
+  filter(country == "Canada") %>%
+  group_by(binary) %>%
+  count(genre) -> bechdel_genre
+
+mutate(bechdel_genre, Ergebnis = recode(binary, FAIL = "durchgefallen",
+                                        PASS = "bestanden")) -> bechdel_genre
+
+bechdel_genre %>%
+  ggplot(aes(x = n, y = reorder(genre, n), fill=Ergebnis))+
+    geom_col(position="dodge")+
+    theme_minimal()+
+    scale_x_continuous() +
+    labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
+    scale_fill_manual(values = c(durchgefallen = "pink", bestanden = "lightblue")) +
+    theme(
+          axis.text=element_text(size=10),    
+          panel.border=element_blank(),
+          plot.background = element_blank(), 
+          legend.background = element_rect(fill = "white"),
+          plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
+
+
+```
+
 ## Vergleich
 ## Fazit

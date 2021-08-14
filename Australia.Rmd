@@ -18,6 +18,7 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(knitr)
+library(ggforce)
 library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
@@ -161,9 +162,35 @@ bechdel2 %>%
 
 ```
 
+Insgesamt gibt es am meisten Drama-Filme, welche hinsichtlich des Bechdel-Tests ausgeglichene Ergebnisse liefern (über 40% der Filme bestehen). Die nächstgrößeren Genres bilden dann: Comedy, Romance und Action, die allesamt eine Bestehensquote von über 50% darbieten.  
+
+```{r}
+# Vergleich der bestandenen/durchgefallenen Filme pro Genre
+bechdel2 %>%
+  separate_rows(genre, sep = ", ") %>%
+  drop_na(genre) %>%
+  filter(country == "Australia") %>%
+  group_by(binary) %>%
+  count(genre) -> bechdel_genre
+
+mutate(bechdel_genre, Ergebnis = recode(binary, FAIL = "durchgefallen",
+                                        PASS = "bestanden")) -> bechdel_genre
+
+bechdel_genre %>%
+  ggplot(aes(x = n, y = reorder(genre, n), fill=Ergebnis))+
+    geom_col(position="dodge")+
+    theme_minimal()+
+    scale_x_continuous() +
+    labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
+    scale_fill_manual(values = c(durchgefallen = "pink", bestanden = "lightblue")) +
+    theme(
+          axis.text=element_text(size=10),    
+          panel.border=element_blank(),
+          plot.background = element_blank(), 
+          legend.background = element_rect(fill = "white"),
+          plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
 
 
-
-## Allgemeine Situation der Gleichstellung
+```
 ## Vergleich
 ## Fazit
