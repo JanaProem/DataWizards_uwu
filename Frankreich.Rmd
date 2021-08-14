@@ -155,18 +155,18 @@ bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Bewertung ist unsich
 #  count(criteria)
 
 bechdel2 %>%
-  filter(country == "France") %>%
+  filter(country == "UK") %>%
   ggplot(aes(x = year, y = criteria, fill = criteria)) +
   geom_density_ridges() +
   theme_ridges() + 
   theme(legend.position = "none") +
   labs(x = "", y = "", 
-       caption = 
-          "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
+       caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
   theme(
     axis.text=element_text(size=10),
     plot.caption = element_text(size = 12, vjust = -1)
   )
+
 
 ```
 
