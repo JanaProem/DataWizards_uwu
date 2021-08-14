@@ -128,7 +128,7 @@ Nach dem Gleichstellungsindex vom CFR hat England keine Hindernisse in diesem Be
 
 
 ## Ergebnisse beim Bechdel-Test
-Mehr als die Hälfte der Filme besteht den Bechdel-Test nicht. Vor 1980 wurden gar keine Filme produziert, welche ihn bestehen. Ab den 1990er Jahren haben alle Bewertungen zugenommen mit einem allgemeinen Produktionspeak zum Ende der 2000er Jahre.Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf genau 50% der durchgefallenen Filme zu.
+Mehr als die Hälfte der Filme besteht den Bechdel-Test nicht. Vor 1980 wurden gar keine Filme produziert, welche ihn bestehen. Ab den 1990er Jahren haben alle Bewertungen zugenommen mit einem allgemeinen Produktionspeak zum Ende der 2000er Jahre. Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf genau 50% der durchgefallenen Filme zu.
 
 ```{r layout='l-body'}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
@@ -167,7 +167,7 @@ bechdel2 %>%
 
 ```
 
-Insgesamt gibt es am meisten Drama-Filme, welche ungefähr gleich häufig beim Bechdel-Test durchfallen oder ihn bestehen. Die Filme fast aller Genre fallen teils durch und bestehen teils. Bei machen Genre kann zudem eine Tendenz festgestellt werden; so fallen Action-, Thriller- und Crime-Filme häufiger durch, während Romance-Filme den Test häufiger bestehen.
+Insgesamt gibt es am meisten Drama-Filme, welche ungefähr gleich häufig beim Bechdel-Test durchfallen oder ihn bestehen. Die Filme fast aller Genres fallen teils durch und bestehen teils. Bei machen Genres kann zudem eine Tendenz festgestellt werden; so fallen Action-, Thriller- und Crime-Filme häufiger durch, während Romance-Filme den Test häufiger bestehen.
 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
@@ -201,6 +201,5 @@ bechdel_genre %>%
 
 
 
-## Allgemeine Situation der Gleichstellung
 ## Vergleich
 ## Fazit

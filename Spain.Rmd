@@ -166,7 +166,7 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         plot.caption = element_text(size = 12, hjust = 0.5))
 ```
 
-Insgesamt gibt es am meisten Drama-Filme, welche ungefähr gleich häufig beim Bechdel-Test durchfallen oder ihn bestehen. Andere Genre gibt es deutlich weniger und sie haben in der Regel klare Tendenzen zum Durchfallen oder Bestehen.
+Insgesamt gibt es am meisten Drama-Filme, welche ungefähr gleich häufig beim Bechdel-Test durchfallen oder ihn bestehen. Andere Genres gibt es deutlich weniger und sie haben in der Regel klare Tendenzen zum Durchfallen oder Bestehen.
 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
@@ -201,6 +201,5 @@ bechdel_genre %>%
 
 
 
-## Allgemeine Situation der Gleichstellung
 ## Vergleich
 ## Fazit
