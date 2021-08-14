@@ -194,13 +194,13 @@ bechdel_genre %>%
     theme_minimal()+
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
-  scale_fill_manual(values = c(durchgefallen = "pink", bestanden = "lightblue")) +
-  theme(
-        axis.text=element_text(size=10),    
-        panel.border=element_blank(),
-        plot.background = element_blank(), 
-        legend.background = element_rect(fill = "white"),
-        plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
+    scale_fill_manual(values = c(durchgefallen = "pink", bestanden = "lightblue")) +
+    theme(
+          axis.text=element_text(size=10),    
+          panel.border=element_blank(),
+          plot.background = element_blank(), 
+          legend.background = element_rect(fill = "white"),
+          plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
 
 
 ```
