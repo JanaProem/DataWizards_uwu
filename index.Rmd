@@ -1,7 +1,8 @@
 ---
-title: "DataWizards"
+title: "Gleichberechtigung"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Sind Filme Spiegel ihrer Gesellschaft?  
+  Finde heraus, wie die Gleichberechtigung in Deinem Land aussieht und ob sie sich in der Filmwelt widerspiegelt!
 output:
   distill::distill_article:
     toc: true
@@ -16,6 +17,7 @@ library(tidyverse)
 library(ggplot2)
 library(scales)
 library("openxlsx")
+library(patchwork)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 ```
@@ -50,22 +52,26 @@ bechdel_countriesFail %>%
   filter(Anzahl > 11) -> bechdel_countriesFail
 ```
 
-## Bechdel-Ranking
-```{r}
+
+## Gleichberechtigung
+Wir, die DataWizards, haben für Euch die spannendsten Länder bereitgestellt. Klick auf unsere Karte oder finde Dein Land über die Menüleiste, um Informationen rund ums Thema Gleichstellung zu finden: Sei es zum [Gleichstellungsindex](Glossar.html) oder zum [Bechdel-Test](Glossar.html).
+
+```{r layout='l-body-outset', fig.width=8, fig.height=3}
+# Diagramm zum Bechdel-Test
 bechdel_countriesFail %>%
 ggplot() +
   aes(x = ProzentFail, y = reorder(country, desc(ProzentFail)), xmin = 0, xmax = 100) +
   geom_col() +
   scale_x_continuous(limits = c(0, 100), 
-                     breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
-  labs(x = "Durchfallquote (in %)",
-       y = NULL) 
-```
-## Gleichstellungsindex
-```{r}
-equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", 
-                      sheet = 2)
+                     breaks = c(0, 20, 40, 60,  80, 100)) +
+  labs(x = "Bechdel-Test-Durchfallquote (in %)",
+       y = NULL) +
+  theme(axis.text=element_text(size=10)) -> plot_bechdel
 
+
+equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", sheet = 2)
+
+# Balkendiagramm zum Gleichstellungsindex
 # in der Excel die Länder umbenennen: United Kingdoms zu UK & United States zu USA
 countries <- c("New Zealand","Czech Republic", "Hong Kong", "China", "Italy", "Japan", "Ireland", "USA", "France", "Germany", "UK", "Canada", "Spain", "Australia")
 equality %>%
@@ -76,10 +82,14 @@ ggplot() +
   aes(x = OVERALL.AVERAGE.SCORE, y = reorder(Economy, OVERALL.AVERAGE.SCORE), xmin = 0, xmax = 100) +
   geom_col() +
   scale_x_continuous(limits = c(0, 100), 
-                     breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+                     breaks = c(0, 20, 40, 60,  80, 100)) +
   labs(x = "Gleichstellungsindex (Gesamtpunktzahl)",
-       y = NULL)
+       y = NULL) +
+  theme(axis.text=element_text(size=10)) -> plot_equality
+
+plot_bechdel + plot_equality
 ```
+- Korrelationstest?
 
 ```{r}
 # Fails/Pass über die Jahre - Liniendiagramm

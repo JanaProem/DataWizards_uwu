@@ -39,3 +39,6 @@ Diagramm-Ideen:
 
 Design-Ideen
   - Blocksatz für Textabsätze
+  
+To Do
+ - Anpassung der Links auf der Startseite (index.Rmd)

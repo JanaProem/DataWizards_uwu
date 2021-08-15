@@ -39,6 +39,8 @@ navbar:
           href: Czech_Republic.html
         - text: "USA"
           href: USA.html
+    - text: "Glossar"
+      href: Glossar.html
     - text: "About"
       href: about.html
 output: distill::distill_article
