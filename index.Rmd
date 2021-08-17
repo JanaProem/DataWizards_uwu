@@ -4,8 +4,7 @@ description: |
   Sind Filme Spiegel ihrer Gesellschaft?  
   Finde heraus, wie die Gleichberechtigung in Deinem Land aussieht und ob sie sich in der Filmwelt widerspiegelt!
 output:
-  distill::distill_article:
-    toc: true
+  distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
@@ -48,13 +47,14 @@ bechdel_fail %>%
 merge(bechdel_fail, bechdel_anzahlFilme) -> bechdel_countriesFail
 
 bechdel_countriesFail %>%
-  mutate(ProzentFail = round((AnzahlFails/Anzahl*100), digits = 2)) %>% 
+  mutate(ProzentFail = round((AnzahlFails/Anzahl*100), digits = 2)) -> bechdel_ALL
+bechdel_ALL %>%
   filter(Anzahl > 11) -> bechdel_countriesFail
 ```
 
 
 ## Gleichberechtigung
-Wir, die DataWizards, haben für Euch die spannendsten Länder bereitgestellt. Klick auf unsere Karte oder finde Dein Land über die Menüleiste, um Informationen rund ums Thema Gleichstellung zu finden: Sei es zum [Gleichstellungsindex](Glossar.html) oder zum [Bechdel-Test](Glossar.html).
+Wir, die DataWizards, haben für Euch die 14 spannendsten Länder bereitgestellt. Klick auf unsere Karte oder finde Dein Land über die Menüleiste, um Informationen rund ums Thema Gleichstellung zu finden: Sei es zum [Gleichstellungsindex](Glossar.html) oder zum [Bechdel-Test](Glossar.html).
 
 ```{r layout='l-body-outset', fig.width=8, fig.height=3}
 # Diagramm zum Bechdel-Test
@@ -89,21 +89,30 @@ ggplot() +
 
 plot_bechdel + plot_equality
 ```
-- Korrelationstest?
+
+Bis auf China und Japan erzielen alle Länder eine hohe Gesamtpunktzahl in dem Gleichstellungsindex – trotzdem schwankt ihre Durchfallquote beim Bechdel-Test um über 30%. Teils unterscheidet sich, wie gut sich das Land in beiden Scores schlägt, teils ähneln sich die Ergebnisse. Die Frage, ob Filme einen Spiegel der Gesellschaft in Bezug auf Gleichstellung darstellen, bleibt somit Ländersache...
 
 ```{r}
 # Fails/Pass über die Jahre - Liniendiagramm
+mutate(bechdel, Ergebnis = recode(binary, FAIL = "durchgefallen",
+                                        PASS = "bestanden")) -> bechdel
+
 bechdel %>% 
   filter(country %in% countries) %>%
-  count(year, binary) %>%
+  count(year, Ergebnis) %>%
   ggplot() +
-  aes(x = year, y =  n, color = binary) +
-  geom_line()
+  aes(x = year, y =  n, color = Ergebnis) +
+  geom_line() +
+  labs(x = "Jahr der Veröffentlichung", y = "Anzahl Filme",
+       caption = "Zeitlicher Verlauf der beim Bechdel-Test durchgefallenen vs. bestandenen Filme") +
+  theme(
+          axis.text=element_text(size=10),    
+          panel.border=element_blank(),
+          plot.background = element_blank(), 
+          legend.background = element_blank(), 
+          legend.box.background = element_rect(fill = "white"),
+          plot.caption = element_text(size = 12, hjust = 0.3, vjust = -1))
   
 
 ```
-- generelle Zunahme von Filmen über die Jahre
-- wenige Peaks von mehr PASS als FAIL
-- grundsätzlich werden trotz Zunahme immer mehr Filme produziert, die durchfallen
-- zeigt, dass in der Filmbranche Gleichberechtigung nicht durchgesetzt ist
-- Filme als Repräsentation/Spiegel der Gesellschaft
+Insgesamt werden über die Jahre immer mehr Filme produziert. Trotz weniger Peaks (z.B. in 1997 und 2005), in denen mehr produzierte Filme den Bechdel-Test bestehen, fallen die seit 1970 veröffentlichten Filme grundsätzlich durch. Wird der Test als Maßstab für die Gleichberechtigung betrachtet, zeigt er, dass sie in der Filmbranche nicht durchgängig umgesetzt ist. Es besteht noch Verbesserungsbedarf!
