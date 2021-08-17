@@ -10,3 +10,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 library(usethis)
 ```
+
+Eingrenzungen
+- Anmerken, dass der Datensatz von Bechdel nur Filme von 1970 bis 2013 enthält
+- Nur Filme, keine Serien
+
+Begriffsklärungen
+- Bechdel-Test
+- Gleichstellungsindex
