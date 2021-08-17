@@ -131,7 +131,7 @@ Nach dem Gleichstellungsindex vom CFR hat Frankreich keine Hindernisse in diesem
 
 
 ## Ergebnisse beim Bechdel-Test
-Der Großteil der Filme besteht den Bechdel-Test nicht.  Vor 1995 wurden nur Filme produziert, welchen eine unsichere Bewertung zugewiesen wurde. Ab Anfang/Mitte der 1990er Jahre haben alle Bewertungen in gleichem Maße zugenommen mit einem allgemeinen Produktionspeak zum Jahrtausendwechsel. Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf gut 30% der durchgefallenen Filme zu.
+Der Großteil der Filme besteht den Bechdel-Test nicht.  Vor 1995 wurden nur Filme veröfentlicht, welchen eine unsichere Bewertung zugewiesen wurde. Ab Anfang/Mitte der 1990er Jahre haben alle Bewertungen in gleichem Maße zugenommen mit einem allgemeinen Produktionspeak zum Jahrtausendwechsel. Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf gut 30% der durchgefallenen Filme zu.
 
 ```{r layout='l-body'}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
