@@ -129,7 +129,7 @@ Nach dem Gleichstellungsindex vom CFR hat Kanada keine Hindernisse in diesem Ber
 
 
 ## Ergebnisse beim Bechdel-Test
-Etwa die Hälfte der Filme besteht den Bechdel-Test nicht. Zwischen 1980 und 1990 wurden überwiegend Filme produziert, die an dem Kriterium "Frauen reden nur über Männer" gescheitert sind. Ab Mitte der 1990er Jahre nahmen Filme, die an diesem Kriterium gescheitert sind ab, jedoch stieg die Anzahl, die an den anderen beiden Kriterien gescheitert sind. Ab 2000 haben alle Bewertungen in gleichem Maße zugenommen, mit Ausnahme um das Jahr 2010 rum: Dort gab es einen sehr starken Anstieg des Kriterium "Es gibt weniger als zwei Frauen". Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf etwa 65% der durchgefallenen Filme zu.
+Etwa die Hälfte der Filme besteht den Bechdel-Test nicht. Zwischen 1980 und 1990 wurden überwiegend Filme veröffentlicht, die an dem Kriterium "Frauen reden nur über Männer" gescheitert sind. Ab Mitte der 1990er Jahre nahmen Filme, die an diesem Kriterium gescheitert sind ab, jedoch stieg die Anzahl, die an den anderen beiden Kriterien gescheitert sind. Ab 2000 haben alle Bewertungen in gleichem Maße zugenommen, mit Ausnahme um das Jahr 2010 rum: Dort gab es einen sehr starken Anstieg des Kriterium "Es gibt weniger als zwei Frauen". Das häufigste Kriterium, an dem die Filme scheitern, ist, dass die Frauen im Film nicht miteinander reden: Dies trifft auf etwa 65% der durchgefallenen Filme zu.
 
 ```{r layout='l-body'}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
