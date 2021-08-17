@@ -205,9 +205,6 @@ bechdel_genre %>%
 
 ```
 
-
-
-
-## Vergleich
 ## Fazit
-- Sind Filme Spiegel der Gesellschaft was Gleichberechtigung angeht?
+Obwohl Neuseeland bei dem Gleichstellungsindex insgesamt sehr gut ausfällt, fallen die in dem Land produzierten Filme generell beim Bechdel-Test durch – hauptsächlich, weil die Frauenrollen nicht miteinander reden. Lediglich Drama-Filme bestehen den Test häufiger.
+Somit spiegeln die Filme von Neuseeland nicht direkt seinen Gleichberechtigungsstandard wider.
