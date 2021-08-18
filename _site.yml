@@ -17,8 +17,6 @@ navbar:
           href: China.html
         - text: "Deutschland"
           href: Deutschland.html
-        - text: "England"
-          href: UK.html
         - text: "Frankreich"
           href: Frankreich.html
         - text: "Hong Kong"
@@ -39,9 +37,11 @@ navbar:
           href: Czech_Republic.html
         - text: "USA"
           href: USA.html
-    - text: "Glossar"
-      href: Glossar.html
-    - text: "About"
+        - text: "Vereinigtes Königreich"
+          href: UK.html
+    - text: "Hintergrundinfos"
+      href: Hintergrundinfos.html
+    - text: "About Us"
       href: about.html
 output: distill::distill_article
 

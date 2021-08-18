@@ -1,0 +1,20 @@
+---
+title: "Hintergrundinfos"
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(usethis)
+```
+
+
+## Bechdel-Test
+Der Bechdel-Test (oder auch: Bechdel-Wallace-Test) ist ein nicht-wissenschaftlicher Test, welcher durch einen Comic von Alison Bechdel popularisiert wurde. Er ist darauf ausgelegt, die Stereotypisierung von Frauenrollen innerhalb von Filmen aufzuzeigen. Damit ein Film den Test besteht, muss er 3 Kriterien erfüllen: (1) Er muss mindestens zwei Frauen enthalten, welche (2) miteinander reden über (3) etwas anderes als Männer.  
+Verwendet haben wir einen der [Bechdel-Datensätze](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-09/readme.md), welche beim [TidyTuesday](https://github.com/rfordatascience/tidytuesday) präsentiert wurden. Der von uns verwendete Datensatz enthält Filme, welche zwischen 1970 und 2013 veröffentlicht wurden.
+
+
+## Gleichstellungsindex
+Der Gleichstellungsindex (offiziell: Women's Workplace Equality Index) vom Council on Foreign Relations (CFR) maß 2018 für 189 Länder weltweit anhand von spezifischen Kriterien die Gleichstellung der Frau. Er spezialisiert sich dabei auf Hindernisse zur ökonomischen Teilhabe. Basierend auf den Kriterien ergeben sich 7 Subskalen sowie eine Gesamtpunktzahl. Die Gesamtpunktzahl kann zwischen 0 und 100 Punkten liegen. Von einer hohen Punktzahl wird bei 76-100, von einer mittleren bei 51-75 und von einer niedrigen bei <50 Punkten gesprochen.  
+Der Datensatz, welchen wir verwendet haben, kann direkt auf der [Webseite](https://www.cfr.org/legal-barriers/country-rankings/) heruntergeladen werden.

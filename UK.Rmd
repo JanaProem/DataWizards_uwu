@@ -1,5 +1,5 @@
 ---
-title: "England"
+title: "Vereinigtes Königreich"
 description: |
   Gleichstellungsindex (Gesamtpunktzahl): 91,8  
   144 der 276 produzierten Filme sind beim Bechdel-Test durchgefallen
@@ -83,17 +83,17 @@ xaringanExtra::style_panelset_tabs(
 
 ::: {.panel}
 #### Finanzieller Arbeitsanreiz {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat England keine Hindernisse in diesem Bereich.
+Nach dem Gleichstellungsindex vom CFR hat das Vereinigte Königreich keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
 #### Grundstücknutzung {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat England keine Hindernisse in diesem Bereich.
+Nach dem Gleichstellungsindex vom CFR hat das Vereinigte Königreich keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
 #### Kreditwürdigkeit {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat England keine Hindernisse in diesem Bereich.
+Nach dem Gleichstellungsindex vom CFR hat das Vereinigte Königreich keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
@@ -114,7 +114,7 @@ Nach dem Gleichstellungsindex vom CFR hat England keine Hindernisse in diesem Be
 
 ::: {.panel}
 #### Zugang zu Behörden {.panel-name}
-Nach dem Gleichstellungsindex vom CFR hat England keine Hindernisse in diesem Bereich.
+Nach dem Gleichstellungsindex vom CFR hat das Vereinigte Königreich keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
