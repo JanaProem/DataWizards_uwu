@@ -143,7 +143,7 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 
 
 # Ergebnisse beim Bechdel-Test
-TEXT
+Fast 60 % der Filme, die in Irland produziert sind, bestehen den Test nicht =  hauptsächlich, weil die weiblichen Rollen nicht miteinander reden. Ein weiterer am häufigsten vertretener Grund ist, dass es weiner als zwei Frauen im Film gibt.
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
 mutate(bechdel2, criteria = recode(clean_test, 
@@ -185,7 +185,7 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         plot.caption = element_text(size = 12, hjust = 0.5))
 ```
 
-TEXT
+Am meisten wird in Irland Romance produziert. In dem Genre bestehen drei von vier Filmen den Bechdel-Test. Thriller und Action fallen jedoch komplett durch. Adventure-Filme fallen zum Großteil durch. 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
 bechdel2 %>%

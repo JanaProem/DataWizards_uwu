@@ -153,6 +153,7 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 
 
 # Ergebnisse beim Bechdel-Test
+Fast 60 % der in Japan produzierten Filme fallen beim Bechdel-Test durch, wobei die Bewertung für 5 der 14 durchgefallenen Filme unsicher ist. Genauso häufig reden die weiblichen Rollen in den Fimen nicht miteinander. 
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
 mutate(bechdel2, criteria = recode(clean_test, 
@@ -193,7 +194,7 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         legend.background = element_rect(fill = "white"),
         plot.caption = element_text(size = 12, hjust = 0.5))
 ```
-text
+In Japan werden vor allem Action-Filme produziert. Die meisten dieser Filme fallen beim Bechdel-Test durch, anders sieht es bei Horror-Filmen aus. Hier bestehen die meisten den Test. 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
 bechdel2 %>%

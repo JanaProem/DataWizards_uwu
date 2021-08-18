@@ -138,7 +138,7 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 
 
 # Ergebnisse beim Bechdel-Test
-TEXT
+Mehr als die Hälfte der in Italien produzierten Filme bestehen den Bechdel-Test nicht – 8 der 23 Filme bestehen alle Kriterien. Vor allem fallen Filme durch, wenn weibliche Rollen nicht miteinander sprechen. Allerdings ist die Bewertung bei vier Filmen unsicher.
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
 mutate(bechdel2, criteria = recode(clean_test, 
@@ -180,7 +180,7 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         plot.caption = element_text(size = 12, hjust = 0.5))
 ```
 
-TEXT
+Betrachten wir die Genres, fällt auf, dass Dramen am meisten durchfallen. Zu beachten ist, dass dies das am meisten produzierte Genre ist. Mit großem Abstand folgen Thriller, Crime und Action. 
 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
