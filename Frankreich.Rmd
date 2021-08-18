@@ -200,5 +200,5 @@ bechdel_genre %>%
 
 
 ```
-## Vergleich
 ## Fazit
+Obwohl Frankreich eine hohe Punktzahl bei dem Gleichstellungsindex erreicht, fallen mehr als die Hälfte in dem Land produzierte Filme den Bechdel-Test durch, vor allem da Frauen nicht miteinander reden. Somit spiegeln die Filme von Frankreich nicht direkt seinen Gleichberechtigungsstandard wider. Lediglich bei den Drama-Filmen ist die Durchfall- und Bestehensquote in etwa ausgeglichen.
