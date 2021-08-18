@@ -19,7 +19,6 @@ library(scales)
 library("openxlsx")
 library(knitr)
 library(ggforce)
-library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -192,5 +191,6 @@ bechdel_genre %>%
 
 
 ```
-## Vergleich
+
 ## Fazit
+Australien schneidet beim Gleichstellungsindex sehr gut ab, wohingegen beim Bechdel-Test mit einer Durchfallquote von 50% zwar noch Luft nach oben ist, aber dies dennoch zu den besseren Ergebnissen gehört. Die Filmlandschaft Australien scheitert dabei am Kriterium, dass Frauen nicht miteinander reden. Jedoch bestehen gerade im Bereich Comedy, Family, Fantasy und Biography mindestens doppelt so viele Filme den Bechdel-Test

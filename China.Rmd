@@ -19,7 +19,6 @@ library(scales)
 library("openxlsx")
 library(knitr)
 library(ggforce)
-library(unikn)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -144,7 +143,7 @@ Nach dem Gleichstellungsindex vom CFR hat China keine Hindernisse in diesem Bere
 
 
 ## Ergebnisse beim Bechdel-Test
-Der Großteil der Filme besteht den Bechdel-Test nicht – nur 3 von 12 Filmen erfüllen alle Kriterien. In den meisten Fällen ist die Bewertung jedoch unsicher. Das Kriterium "Frauen reden nur über Männer taucht gar nicht auf, wohingegen die anderen beiden Kriterien zum Durchfallen eine gleiche Verteilung haben. 
+Der Großteil der Filme besteht den Bechdel-Test nicht – nur 3 von 12 Filmen erfüllen alle Kriterien. In den meisten Fällen ist die Bewertung jedoch unsicher. Das Kriterium "Frauen reden nur über Männer" taucht gar nicht auf, wohingegen die anderen beiden Kriterien zum Durchfallen eine ähnliche Verteilung haben. 
 
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
@@ -216,5 +215,5 @@ bechdel_genre %>%
           plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
 ```
 
-## Vergleich
 ## Fazit
+China schneidet sowohl beim Gleichstellungsindex als auch beim Bechdel-Test nicht gut ab. Die Kriterien des Durchfallens beim Bechdel-Test sind hierbei jedoch ähnlich verteilt, mit der Ausnahme des Kriteriums "Frauen reden nur über Männer", welches gar nicht auftaucht. Das Genre Drama ist hierbei das einzige, wo zumindest die Bestehensquote fast ausgeglichen ist. Jedoch lässt sich keine genaueren Aussagen über weitere Genres diesbezüglich treffen, da die meisten Genres maximal nur zwei Filme umfassen. 
