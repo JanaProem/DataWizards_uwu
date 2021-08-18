@@ -137,7 +137,7 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 :::
 
 
-# Ergebnisse beim Bechdel-Test
+## Ergebnisse beim Bechdel-Test
 Mehr als die Hälfte der in Italien produzierten Filme bestehen den Bechdel-Test nicht – 8 der 23 Filme bestehen alle Kriterien. Vor allem fallen Filme durch, wenn weibliche Rollen nicht miteinander sprechen. Allerdings ist die Bewertung bei vier Filmen unsicher.
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
