@@ -1,20 +1,11 @@
 ---
-title: "Tobi Burns"
-image: "images/DataWizard_rund.png"
-links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
-  - label: GitHub
-    url: "https://github.com/"
-  - label: Email
-    url: "mailto:email@email.com"
+title: "About Us"
 output:
-  postcards::jolla
-site: distill::distill_website
+  distill::distill_article
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+Hi! Wir, Haris, Ivanina, Jana und Verena, sind die DataWizards.  
+Wenn Euch interessiert, wie die Seite aufgebaut ist und wie wir die Daten aufbereitet haben, könnt Ihr gerne mal [hier](https://github.com/JanaProem/DataWizards_uwu) in unseren Code schauen.  
+Bei Fragen und Anmerkungen könnt Ihr uns gerne auch [hierüber](mailto:jana.proemper@rwth-aachen.de) kontaktieren.
+
+![](images/DataWizard_rund.png)
