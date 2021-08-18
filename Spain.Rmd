@@ -198,8 +198,6 @@ bechdel_genre %>%
 
 ```
 
-
-
-
-## Vergleich
 ## Fazit
+Spanien erzielt im Gleichstellungsindex eine sehr hohe Gesamtpunktzahl. Gleichzeitig fällt die Hälfte der veröffentlichten Filme beim Bechdel-Test durch –  hauptsächlich, weil die Frauenrollen nicht miteinander reden. Im Vergleich fallen besonders oft Adventure-, History- und Action-Filme durch. Das häufigste Genre Drama dagegen ist fast ausgeglichen in seiner Durchfall- und Bestehensquote. 
+Während sich das hohe Ergebnis von Spanien im Gleichstellungsergebnis nicht gänzlich in seinen Filmen widerspiegelt, schlägt es sich doch mit den anderen 14 Ländern mit am besten.
