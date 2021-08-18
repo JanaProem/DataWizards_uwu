@@ -41,7 +41,7 @@ navbar:
           href: USA.html
     - text: "Hintergrundinfos"
       href: Hintergrundinfos.html
-    - text: "About"
+    - text: "About Us"
       href: about.html
 output: distill::distill_article
 
