@@ -223,6 +223,6 @@ bechdel_genre %>%
 
 
 ```
-text
-# Vergleich
-# Fazit
+## Fazit
+Sowohl filmtechnisch als auch bezüglich der Gleichstellung schneidet Japan nicht gut ab: Der Gleichstellungsindex bescheinigt ein mittleres Ergebnis und die Filme zeichnen ein ähnliches Bild ab. Zu beachten ist aber, dass bei einigen Filmen die Bewertung des Bechdel-Tests unsicher war. 
+Action-Filme werden in Japan am meisten produziert und fallen zum größten Teil beim Bechdel-Test durch. 

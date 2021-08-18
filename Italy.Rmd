@@ -210,6 +210,5 @@ bechdel_genre %>%
 
 
 ```
-
-# Vergleich
-# Fazit
+## Fazit
+Italien schneidet beim Gleichstellungsindex gut ab. Das spiegelt sich allerdings nicht in der Filmlandschaft wider, da 65 % der Filme den Bechdel-Test nicht bestehen. Der Hauptgrund hierfür ist, dass die Frauen in den Filmen nicht miteinander reden. Immerhin bestehen etwa die Hälfte der Dramen den Bechdel-Test. 
