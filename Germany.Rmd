@@ -210,7 +210,5 @@ bechdel_genre %>%
 ```
 
 
-
-
-## Vergleich
 ## Fazit
+Deutschland erzielt im Gleichstellungsindex eine hohe Gesamtpunktzahl, jedoch fällt über die Hälfte der Filme beim Bechdel-Test durch. as größte Problem stellt hierbei das Kriterium dar, dass Frauen nicht miteinander reden. Drama-, Action-, und Thriller- Filme bestehen den Bechdel-Test am meisten nicht. 

@@ -228,5 +228,5 @@ bechdel_genre %>%
 
 
 
-## Vergleich
 ## Fazit
+Tschechien schneidet beim Gleichstellungsindex mittelgut ab, beim Bechdel-Test jedoch  schlecht. Der Großteil der Filme besteht den Bechdel-Test nicht – nur 3 von 14 Filmen erfüllen alle Kriterien. Der Hauptgrund hierfür ist, dass die Frauen in den Filmen nicht miteinander reden. Bei Drama- und Adventure-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist. 
