@@ -208,4 +208,4 @@ bechdel_genre %>%
 ```
 
 ## Fazit
-Tschechien schneidet beim Gleichstellungsindex gut ab, beim Bechdel-Test jedoch eher schlecht. Das größte Problem stellt hierbei das Kriterium dar, dass Frauen nicht miteinader reden. Die meisten Genres haben eine Durchfallquote von 100%, Ausnahmen bilden hierbei jedoch: Action, Adventure, Fantasy und Family. 
+Tschechien schneidet beim Gleichstellungsindex gut ab, beim Bechdel-Test jedoch eher schlecht. Das größte Problem stellt hierbei das Kriterium dar, dass Frauen nicht miteinander reden. Die meisten Genres haben eine Durchfallquote von 100%, Ausnahmen bilden hierbei jedoch: Action, Adventure, Fantasy und Family. 

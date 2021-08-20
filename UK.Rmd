@@ -198,8 +198,5 @@ bechdel_genre %>%
 
 ```
 
-
-
-
-## Vergleich
 ## Fazit
+Das Vereinigte Königkreich erzielt im Gleichstellungsindex eine hohe Gesamtpunktzahl, jedoch fällt über die Hälfte der Filme beim Bechdel-Test durch. Der häufigste Grund hierfür ist, dass die Frauenrollen nicht miteinander reden. Während die Durchfall- und Bestehensquote bei dem häufigsten Genre Drama und wenig anderen sehr ausgeglichen sind, sind größtenteils Tendenzen zum Durchfallen oder Bestehen erkennbar.
