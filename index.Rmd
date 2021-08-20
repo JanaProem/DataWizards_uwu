@@ -17,6 +17,8 @@ library(ggplot2)
 library(scales)
 library("openxlsx")
 library(patchwork)
+library(plotly)
+library(readr)
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 ```
@@ -47,20 +49,47 @@ bechdel_fail %>%
 merge(bechdel_fail, bechdel_anzahlFilme) -> bechdel_countriesFail
 
 bechdel_countriesFail %>%
-  mutate(ProzentFail = round((AnzahlFails/Anzahl*100), digits = 2)) -> bechdel_ALL
+  mutate(Durchfallquote = round((AnzahlFails/Anzahl*100), digits = 2)) -> bechdel_ALL
 bechdel_ALL %>%
   filter(Anzahl > 11) -> bechdel_countriesFail
 ```
 
 
-## Gleichberechtigung
 Wir, die DataWizards, haben für Euch die 14 spannendsten Länder bereitgestellt. Klick auf unsere Karte oder finde Dein Land über die Menüleiste, um Informationen rund ums Thema Gleichstellung zu finden: Sei es zum [Gleichstellungsindex](Glossar.html) oder zum [Bechdel-Test](Glossar.html).
 
+```{r layout='l-page'}
+# Karte zur Durchfallquote der 14 Länder
+df <- read_csv("data/Country_Codes.csv")
+names(df) <- c("country", "gdp.billions", "CODE")
+names(bechdel_countriesFail) <- c("country", "binary", "AnzahlFails", "Anzahl", "Durchfallquote")
+
+map_data <- bechdel_countriesFail %>%
+  inner_join(df, by = "country") %>%
+  mutate(hover = paste0(country, "\n", Durchfallquote, "%"))
+
+map <- plot_geo(map_data,
+               locationmode = "country names") %>%
+  add_trace(locations = ~country,
+            z = ~Durchfallquote,
+            color = ~Durchfallquote,
+            colorscale = "Electric",
+            text = ~hover,
+            hoverinfo = "text") %>%
+  layout(width = 1130, height = 575,
+         title = "Durchfallquote beim Bechdel-Test") %>%
+  colorbar(ticksuffix = "%")
+
+map
+```
+  
+# Verschub
+# Verschub
+  
 ```{r layout='l-body-outset', fig.width=8, fig.height=3}
 # Diagramm zum Bechdel-Test
 bechdel_countriesFail %>%
 ggplot() +
-  aes(x = ProzentFail, y = reorder(country, desc(ProzentFail)), xmin = 0, xmax = 100) +
+  aes(x = Durchfallquote, y = reorder(country, desc(Durchfallquote)), xmin = 0, xmax = 100) +
   geom_col() +
   scale_x_continuous(limits = c(0, 100), 
                      breaks = c(0, 20, 40, 60,  80, 100)) +

@@ -2298,11 +2298,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-<<<<<<< HEAD
-  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-=======
   <script src="site_libs/header-attrs-2.10.3/header-attrs.js"></script>
->>>>>>> d6b4133225ff3a1827c1c3587ab3cb020f539be5
+  <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.9.4.1/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2347,10 +2351,9 @@ Ergebnisse nach Land
 <a href="Australia.html">Australien</a>
 <a href="China.html">China</a>
 <a href="Deutschland.html">Deutschland</a>
-<a href="UK.html">England</a>
 <a href="Frankreich.html">Frankreich</a>
 <a href="Hong_Kong.html">Hong Kong</a>
-<a href="Irland.html">Irland</a>
+<a href="Ireland.html">Irland</a>
 <a href="Italy.html">Italien</a>
 <a href="Japan.html">Japan</a>
 <a href="Canada.html">Kanada</a>
@@ -2358,10 +2361,11 @@ Ergebnisse nach Land
 <a href="Spain.html">Spanien</a>
 <a href="Czech_Republic.html">Tschechien</a>
 <a href="USA.html">USA</a>
+<a href="UK.html">Vereinigtes Königreich</a>
 </div>
 </div>
-<a href="Glossar.html">Hintergrundinfos</a>
-<a href="about.html">About</a>
+<a href="Hintergrundinfos.html">Hintergrundinfos</a>
+<a href="about.html">About Us</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2383,14 +2387,19 @@ Finde heraus, wie die Gleichberechtigung in Deinem Land aussieht und ob sie sich
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h2 id="gleichberechtigung">Gleichberechtigung</h2>
 <p>Wir, die DataWizards, haben für Euch die 14 spannendsten Länder bereitgestellt. Klick auf unsere Karte oder finde Dein Land über die Menüleiste, um Informationen rund ums Thema Gleichstellung zu finden: Sei es zum <a href="Glossar.html">Gleichstellungsindex</a> oder zum <a href="Glossar.html">Bechdel-Test</a>.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div id="htmlwidget-4514f706b8de916ff8d1" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4514f706b8de916ff8d1">{"x":{"visdat":{"34b0500a6b39":["function () ","plotlyVisDat"]},"cur_data":"34b0500a6b39","attrs":{"34b0500a6b39":{"locationmode":"country names","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"locations":{},"z":{},"color":{},"colorscale":"Electric","text":{},"hoverinfo":"text","inherit":true}},"layout":{"width":1130,"height":575,"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Durchfallquote beim Bechdel-Test","scene":{"zaxis":{"title":"Durchfallquote"}},"geo":{"domain":{"x":[0,1],"y":[0,1]}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"colorbar":{"title":"Durchfallquote","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top","ticksuffix":"%"},"colorscale":"Electric","showscale":true,"locationmode":"country names","locations":["Australia","Canada","China","Czech Republic","France","Germany","Hong Kong","Ireland","Italy","Japan","New Zealand","Spain","UK","USA"],"z":[50,51.55,75,84.62,53.92,53.74,78.57,57.14,65.22,58.33,85.71,50,52.17,56.05],"text":["Australia<br />50%","Canada<br />51.55%","China<br />75%","Czech Republic<br />84.62%","France<br />53.92%","Germany<br />53.74%","Hong Kong<br />78.57%","Ireland<br />57.14%","Italy<br />65.22%","Japan<br />58.33%","New Zealand<br />85.71%","Spain<br />50%","UK<br />52.17%","USA<br />56.05%"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"type":"choropleth","marker":{"line":{"colorbar":{"title":"","ticklen":2},"cmin":50,"cmax":85.71,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666666","rgba(70,19,97,1)"],["0.0833333333333334","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666666","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[50,51.55,75,84.62,53.92,53.74,78.57,57.14,65.22,58.33,85.71,50,52.17,56.05]}},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h1 id="verschub">Verschub</h1>
+<h1 id="verschub-1">Verschub</h1>
 <div class="layout-chunk" data-layout="l-body-outset">
-<p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="768" /></p>
+<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="768" /></p>
 </div>
 <p>Bis auf China und Japan erzielen alle Länder eine hohe Gesamtpunktzahl in dem Gleichstellungsindex – trotzdem schwankt ihre Durchfallquote beim Bechdel-Test um über 30%. Teils unterscheidet sich, wie gut sich das Land in beiden Scores schlägt, teils ähneln sich die Ergebnisse. Die Frage, ob Filme einen Spiegel der Gesellschaft in Bezug auf Gleichstellung darstellen, bleibt somit Ländersache…</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+<p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
 <p>Insgesamt werden über die Jahre immer mehr Filme produziert. Trotz weniger Peaks (z.B. in 1997 und 2005), in denen mehr produzierte Filme den Bechdel-Test bestehen, fallen die seit 1970 veröffentlichten Filme grundsätzlich durch. Wird der Test als Maßstab für die Gleichberechtigung betrachtet, zeigt er, dass sie in der Filmbranche nicht durchgängig umgesetzt ist. Es besteht noch Verbesserungsbedarf!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
