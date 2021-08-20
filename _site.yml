@@ -16,9 +16,9 @@ navbar:
         - text: "China"
           href: China.html
         - text: "Deutschland"
-          href: Deutschland.html
+          href: Germany.html
         - text: "Frankreich"
-          href: Frankreich.html
+          href: France.html
         - text: "Hong Kong"
           href: Hong_Kong.html
         - text: "Irland"

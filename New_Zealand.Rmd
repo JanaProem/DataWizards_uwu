@@ -19,6 +19,8 @@ library(scales)
 library("openxlsx")
 library(knitr)
 library(ggforce)
+library(extrafont)
+loadfonts(device = "win")
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -60,21 +62,23 @@ equality_long %>%
     geom_col() +
     labs(x = "Erreichte Punktzahl", y = "", caption = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
-    scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
+    scale_fill_manual(values = c("ja" = "#9B72AA", "nein" = "#C6B4CE"), guide = "none") +
+    theme(plot.background = element_rect(fill = "#FFF5DE"), 
+          panel.background = element_rect(fill = "#FFF5DE"),
+          panel.grid = element_line(colour = "darkgray"),
+          text=element_text(family = "sans")) 
 ```
 
-
-
 ### Hindernisse 
-
 
 ```{r panelset, layout='l-body', echo=FALSE}
 # Erstellung eines Panelsets
 xaringanExtra::use_panelset()
 
 xaringanExtra::style_panelset_tabs(
-  active_foreground = "#9370db",
-  hover_foreground = "gray"
+  active_foreground = "#9B72AA",
+  hover_foreground = "black",
+  inactive_opacity = 0.5
 )
 ```
 
@@ -157,7 +161,13 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
-      geom_text(aes(label = paste0(n)), position = position_stack(vjust = 0.5)) +
+  scale_fill_manual(values = c("Es gibt weniger als 2 Frauen" = "#3C5186",
+                               "Frauen reden nicht miteinander" = "#5371bd",
+                               "Frauen reden nur über Männer" = "#6488e8",
+                               "Film besteht alle Kriterien" = "#9B72AA",
+                               "Bewertung ist unsicher" = "#C6B4CE"
+                               )) +
+      geom_text(aes(label = paste0(n)), position = position_stack(vjust = 0.5), color = "white") +
       scale_y_continuous(breaks = 0:14) +
       labs(x = NULL, y = NULL, fill = NULL,
            caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme") +
@@ -165,13 +175,15 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         axis.title = element_blank(), 
         axis.ticks = element_blank(), 
         axis.text = element_blank(),
-        panel.background = element_blank(),
+        panel.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
         panel.border=element_blank(),
-        plot.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        legend.background = element_rect(fill = "white"),
-        plot.caption = element_text(size = 12, hjust = 0.5))
+        plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"), 
+        panel.grid = element_blank(),
+        legend.background = element_rect(fill = "white", color = "black"),
+        plot.title = element_text(face = "bold"), ## funktioniert nicht???
+        plot.caption = element_text(size = 12, hjust = 0.5),
+        strip.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
+        text=element_text(family = "sans"))
 ```
 
 Insgesamt gibt es am meisten Adventure- und Action-Filme, welche jedoch allesamt den Bechdel-Test nicht bestehen. Lediglich bei Drama-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist.
@@ -194,11 +206,13 @@ bechdel_genre %>%
     theme_minimal()+
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
-    scale_fill_manual(values = c(durchgefallen = "pink", bestanden = "lightblue")) +
+    scale_fill_manual(values = c(durchgefallen = "#ff696c", bestanden = "#5371bd")) +
     theme(
           axis.text=element_text(size=10),    
           panel.border=element_blank(),
-          plot.background = element_blank(), 
+          panel.grid = element_line(colour = "darkgray"),
+          text=element_text(family = "sans"),
+          plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"), 
           legend.background = element_rect(fill = "white"),
           plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
 

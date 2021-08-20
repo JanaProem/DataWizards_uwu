@@ -2117,7 +2117,59 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <style type="text/css">/*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
 
+  @import url('https://fonts.googleapis.com/css2?family=Amiri');
+  @import url('https://fonts.googleapis.com/css2?family=Bitter');
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono');
 
+  d-title{
+    margin-top: 50px;
+  }
+
+
+  html {
+    /*-- Main font sizes --*/
+    --title-size:      50px;
+    --body-size:       1.06rem;
+    --code-size:       14px;
+    --aside-size:      12px;
+    --fig-cap-size:    13px;
+    /*-- Main font colors --*/
+    --title-color:     #000000;
+    --header-color:    rgba(0, 0, 0, 0.8);
+    --body-color:      rgba(0, 0, 0, 0.8);
+    --aside-color:     rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    /*-- Specify custom fonts ~~~ must be imported above   --*/
+    --heading-font:    "Amiri", sans-serif;
+    --mono-font:       "DM Mono", monospace;
+    --body-font:       "Bitter", sans-serif;
+    --navbar-font:     "Amiri", sans-serif;  /* websites + blogs only */
+  }
+
+  /*-- ARTICLE METADATA --*/
+  d-byline {
+    --heading-size:    0.6rem;
+    --heading-color:   rgba(0, 0, 0, 0.5);
+    --body-size:       0.8rem;
+    --body-color:      #F9F9F9;
+  }
+
+  /*-- ARTICLE TABLE OF CONTENTS --*/
+  .d-contents {
+    --heading-size:    18px;
+    --contents-size:   13px;
+  }
+
+  /*-- ARTICLE APPENDIX --*/
+  d-appendix {
+    --heading-size:    15px;
+    --heading-color:   rgba(0, 0, 0, 0.65);
+    --text-size:       0.8em;
+    --text-color:      rgba(0, 0, 0, 0.5);
+  }
+
+
+  /*-- WEBSITE HEADER + FOOTER --*/
   .distill-site-header .logo img {
       display: inline-block;
       width: 70px;
@@ -2127,12 +2179,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
       height: 70px;
+    --title-size:       24px;
+    --text-color:       black;
+    --text-size:        20px;
+    --hover-color:      white;
+    --bkgd-color:       #C6B4CE;
   }
-
 
   .distill-site-header .title {
   position: relative;
-  transform: translateY(-45%);
+  transform: translateY(-30%);
   }
 
   .distill-site-header .nav-right {
@@ -2140,8 +2196,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       position: relative;
   }
 
-  d-title{
-    margin-top: 50px;
+  .distill-site-footer {
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  body {
+    background-color: #FFF5DE;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2298,11 +2361,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-<<<<<<< HEAD
-  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-=======
   <script src="site_libs/header-attrs-2.10.3/header-attrs.js"></script>
->>>>>>> d6b4133225ff3a1827c1c3587ab3cb020f539be5
   <link href="site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
   <script src="site_libs/panelset-0.2.6/panelset.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
@@ -2348,11 +2407,10 @@ Ergebnisse nach Land
 <div class="nav-dropdown-content">
 <a href="Australia.html">Australien</a>
 <a href="China.html">China</a>
-<a href="Deutschland.html">Deutschland</a>
-<a href="UK.html">England</a>
-<a href="Frankreich.html">Frankreich</a>
+<a href="Germany.html">Deutschland</a>
+<a href="France.html">Frankreich</a>
 <a href="Hong_Kong.html">Hong Kong</a>
-<a href="Irland.html">Irland</a>
+<a href="Ireland.html">Irland</a>
 <a href="Italy.html">Italien</a>
 <a href="Japan.html">Japan</a>
 <a href="Canada.html">Kanada</a>
@@ -2360,10 +2418,11 @@ Ergebnisse nach Land
 <a href="Spain.html">Spanien</a>
 <a href="Czech_Republic.html">Tschechien</a>
 <a href="USA.html">USA</a>
+<a href="UK.html">Vereinigtes Königreich</a>
 </div>
 </div>
-<a href="Glossar.html">Hintergrundinfos</a>
-<a href="about.html">About</a>
+<a href="Hintergrundinfos.html">Hintergrundinfos</a>
+<a href="about.html">About Us</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2401,7 +2460,7 @@ Ergebnisse nach Land
 </div>
 <h3 id="hindernisse">Hindernisse</h3>
 <div class="layout-chunk" data-layout="l-body">
-<p><style>.panelset{--panel-tab-active-foreground: #9370db;--panel-tab-hover-foreground: gray;}</style></p>
+<p><style>.panelset{--panel-tab-active-foreground: #9B72AA;--panel-tab-hover-foreground: black;--panel-tab-inactive-opacity: 0.5;}</style></p>
 </div>
 <div class="l-body">
 <div class="panelset">

@@ -55,7 +55,8 @@ bechdel_ALL %>%
 ```
 
 
-Wir, die DataWizards, haben für Euch die 14 spannendsten Länder bereitgestellt. Klick auf unsere Karte oder finde Dein Land über die Menüleiste, um Informationen rund ums Thema Gleichstellung zu finden: Sei es zum [Gleichstellungsindex](Glossar.html) oder zum [Bechdel-Test](Glossar.html).
+Wir, die DataWizards, haben für Euch die 14 spannendsten Länder bereitgestellt. Finde Dein Land über die Menüleiste, um Informationen rund ums Thema Gleichstellung zu finden: Sei es zum [Gleichstellungsindex](Glossar.html) oder zum [Bechdel-Test](Glossar.html).  
+Fahre mit Deiner Maus über die Karte, um einen ersten Einblick in die Ergebnisse zu bekommen.
 
 ```{r layout='l-page'}
 # Karte zur Durchfallquote der 14 Länder
@@ -76,14 +77,19 @@ map <- plot_geo(map_data,
             text = ~hover,
             hoverinfo = "text") %>%
   layout(width = 1130, height = 575,
-         title = "Durchfallquote beim Bechdel-Test") %>%
-  colorbar(ticksuffix = "%")
+         title = "Durchfallquote beim Bechdel-Test",
+         plot_bgcolor='#FFF5DE',
+         paper_bgcolor='#FFF5DE') %>%
+  colorbar(ticksuffix = "%") 
 
 map
 ```
   
 # Verschub
-# Verschub
+## Verschub
+
+## Der erste Blick zeigt...
+
   
 ```{r layout='l-body-outset', fig.width=8, fig.height=3}
 # Diagramm zum Bechdel-Test
