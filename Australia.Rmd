@@ -167,10 +167,11 @@ bechdel2 %>%
   theme(
     axis.text=element_text(size=10),
     legend.position = "none",
+    panel.grid.major = element_line(color = "darkgray"),
+    plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
     plot.caption = element_text(size = 12, vjust = -1),
-    text=element_text(family = "sans"),
-    plot.background = element_rect(fill = "#FFF5DE",  color = "transparent")
-  )
+    text=element_text(family = "sans"))
+  
 
 ```
 
@@ -194,7 +195,7 @@ bechdel_genre %>%
     theme_minimal()+
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
-    scale_fill_manual(values = c(durchgefallen = "#ff696c", bestanden = "#5371bd")) +
+    scale_fill_manual(values = c(durchgefallen = "#e88794", bestanden = "#6488e8")) +
     theme(
           axis.text=element_text(size=10),    
           panel.border=element_blank(),
