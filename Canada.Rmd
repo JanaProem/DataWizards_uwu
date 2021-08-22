@@ -19,6 +19,8 @@ library(scales)
 library("openxlsx")
 library(knitr)
 library(ggforce)
+library(extrafont)
+loadfonts(device = "win")
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -58,9 +60,13 @@ equality_long %>%
         xmin = 0, xmax = 100,
         fill = ToHighlight) +
     geom_col() +
-    labs(x = "Erreichte Punktzahl", y = "") +
+    labs(x = "Erreichte Punktzahl", y = "", caption = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
-    scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
+    scale_fill_manual(values = c("ja" = "#9B72AA", "nein" = "#C6B4CE"), guide = "none") +
+    theme(plot.background = element_rect(fill = "#FFF5DE"), 
+          panel.background = element_rect(fill = "#FFF5DE"),
+          panel.grid = element_line(colour = "darkgray"),
+          text=element_text(family = "sans")) 
 ```
 
 
@@ -68,11 +74,13 @@ equality_long %>%
 
 
 ```{r panelset, layout='l-body', echo=FALSE}
+# Erstellung eines Panelsets
 xaringanExtra::use_panelset()
 
 xaringanExtra::style_panelset_tabs(
-  active_foreground = "#9370db",
-  hover_foreground = "gray"
+  active_foreground = "#9B72AA",
+  hover_foreground = "black",
+  inactive_opacity = 0.5
 )
 ```
 
@@ -156,13 +164,20 @@ bechdel2 %>%
   ggplot(aes(x = year, y = criteria, fill = criteria)) +
   geom_density_ridges() +
   theme_ridges() + 
-  theme(legend.position = "none") +
+  scale_fill_manual(values = c("Es gibt weniger als 2 Frauen" = "#3C5186",
+                               "Frauen reden nicht miteinander" = "#5371bd",
+                               "Frauen reden nur über Männer" = "#6488e8",
+                               "Film besteht alle Kriterien" = "#9B72AA",
+                               "Bewertung ist unsicher" = "#C6B4CE")) +
   labs(x = "", y = "", 
        caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
   theme(
     axis.text=element_text(size=10),
-    plot.caption = element_text(size = 12, vjust = -1)
-  )
+    legend.position = "none",
+    panel.grid.major = element_line(color = "darkgray"),
+    plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
+    plot.caption = element_text(size = 12, vjust = -1),
+    text=element_text(family = "sans"))
 
 ```
 
@@ -186,11 +201,13 @@ bechdel_genre %>%
     theme_minimal()+
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
-    scale_fill_manual(values = c(durchgefallen = "pink", bestanden = "lightblue")) +
+    scale_fill_manual(values = c(durchgefallen = "#e88794", bestanden = "#6488e8")) +
     theme(
           axis.text=element_text(size=10),    
           panel.border=element_blank(),
-          plot.background = element_blank(), 
+          panel.grid = element_line(colour = "darkgray"),
+          text=element_text(family = "sans"),
+          plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"), 
           legend.background = element_rect(fill = "white"),
           plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
 
