@@ -68,19 +68,21 @@ map_data <- bechdel_countriesFail %>%
   inner_join(df, by = "country") %>%
   mutate(hover = paste0(country, "\n", Durchfallquote, "%"))
 
+t <- list(family = "Arial")
+
 map <- plot_geo(map_data,
                locationmode = "country names") %>%
   add_trace(locations = ~country,
             z = ~Durchfallquote,
             color = ~Durchfallquote,
-         #   colorscale = "Viridis",
             colorscale = list(c(0, 1), c("#FFF5DE", "#4b2ab7")),
             text = ~hover,
             hoverinfo = "text") %>% 
   layout(width = 1130, height = 575,
-         title = "Durchfallquote beim Bechdel-Test",
-         plot_bgcolor='#FFF5DE',
-         paper_bgcolor='#FFF5DE') %>%
+         title = "<b>Durchfallquote beim Bechdel-Test<b>",
+         plot_bgcolor = "#FFF5DE",
+         paper_bgcolor = "#FFF5DE",
+         font = t) %>%
   colorbar(ticksuffix = "%") 
 
 map
