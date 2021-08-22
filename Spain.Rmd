@@ -59,7 +59,11 @@ equality_long %>%
     geom_col() +
     labs(x = "Erreichte Punktzahl", y = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
-    scale_fill_manual(values = c("ja" = "#9370db", "nein" = "slategray1"), guide = "none")
+    scale_fill_manual(values = c("ja" = "#9B72AA", "nein" = "#C6B4CE"), guide = "none") +
+    theme(plot.background = element_rect(fill = "#FFF5DE"), 
+          panel.background = element_rect(fill = "#FFF5DE"),
+          panel.grid = element_line(colour = "darkgray"),
+          text=element_text(family = "sans")) 
 ```
 
 
@@ -71,8 +75,9 @@ equality_long %>%
 xaringanExtra::use_panelset()
 
 xaringanExtra::style_panelset_tabs(
-  active_foreground = "#9370db",
-  hover_foreground = "gray"
+  active_foreground = "#9B72AA",
+  hover_foreground = "black",
+  inactive_opacity = 0.5
 )
 ```
 
@@ -145,11 +150,17 @@ bechdel2 %>%
   filter(country == "Spain") %>% 
   count(criteria) -> data_kreis
 
-ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
+p <- ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
-      geom_text(aes(label = paste0(n)), position = position_stack(vjust = 0.5)) +
+  scale_fill_manual(values = c("Es gibt weniger als 2 Frauen" = "#3C5186",
+                               "Frauen reden nicht miteinander" = "#5371bd",
+                               "Frauen reden nur über Männer" = "#6488e8",
+                               "Film besteht alle Kriterien" = "#9B72AA",
+                               "Bewertung ist unsicher" = "#C6B4CE"
+                               )) +
+      geom_text(aes(label = paste0(n), fontface = "bold"), position = position_stack(vjust = 0.5), color = "white") +
       scale_y_continuous(breaks = 0:14) +
       labs(x = NULL, y = NULL, fill = NULL,
            caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme") +
@@ -157,14 +168,18 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         axis.title = element_blank(), 
         axis.ticks = element_blank(), 
         axis.text = element_blank(),
-        panel.background = element_blank(),
+        panel.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
         panel.border=element_blank(),
-        plot.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        legend.background = element_rect(fill = "white"),
-        plot.caption = element_text(size = 12, hjust = 0.5))
+        plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"), 
+        panel.grid = element_blank(),
+        legend.background = element_rect(fill = "white", color = "black"),
+        plot.caption = element_text(size = 12, hjust = 0.5),
+        strip.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
+        text=element_text(family = "sans"))
+
+ggsave(p, filename = "images/Kreis_Spain.png", bg = "transparent")
 ```
+![](images\Kreis_Spain.png)
 
 Insgesamt gibt es am meisten Drama-Filme, welche ungefähr gleich häufig beim Bechdel-Test durchfallen oder ihn bestehen. Andere Genres gibt es deutlich weniger und sie haben in der Regel klare Tendenzen zum Durchfallen oder Bestehen.
 
@@ -187,14 +202,15 @@ bechdel_genre %>%
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
     scale_x_continuous(breaks = c(0, 2, 4, 6, 8)) +
-    scale_fill_manual(values = c(durchgefallen = "pink", bestanden = "lightblue")) +
+    scale_fill_manual(values = c(durchgefallen = "#e88794", bestanden = "#6488e8")) +
     theme(
           axis.text=element_text(size=10),    
           panel.border=element_blank(),
-          plot.background = element_blank(), 
+          panel.grid = element_line(colour = "darkgray"),
+          text=element_text(family = "sans"),
+          plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"), 
           legend.background = element_rect(fill = "white"),
           plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
-
 
 ```
 
