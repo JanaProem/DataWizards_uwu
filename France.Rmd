@@ -155,10 +155,6 @@ bechdel2$criteria <- ordered(bechdel2$criteria, levels = c("Bewertung ist unsich
                                                            "Frauen reden nicht miteinander",
                                                            "Es gibt weniger als 2 Frauen"))
 
-# Überblick über die Anzahl der Kriterien des Lands
-# bechdel2 %>%
-#  filter(country == "France") %>% 
-#  count(criteria)
 
 bechdel2 %>%
   filter(country == "France") %>%
