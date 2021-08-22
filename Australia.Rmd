@@ -151,12 +151,19 @@ bechdel2 %>%
   ggplot(aes(x = year, y = criteria, fill = criteria)) +
   geom_density_ridges() +
   theme_ridges() + 
-  theme(legend.position = "none") +
+  scale_fill_manual(values = c("Es gibt weniger als 2 Frauen" = "#3C5186",
+                               "Frauen reden nicht miteinander" = "#5371bd",
+                               "Frauen reden nur über Männer" = "#6488e8",
+                               "Film besteht alle Kriterien" = "#9B72AA",
+                               "Bewertung ist unsicher" = "#C6B4CE")) +
   labs(x = "", y = "", 
        caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme über die Jahre") +
   theme(
     axis.text=element_text(size=10),
-    plot.caption = element_text(size = 12, vjust = -1)
+    legend.position = "none",
+    plot.caption = element_text(size = 12, vjust = -1),
+    text=element_text(family = "sans"),
+    plot.background = element_rect(fill = "#FFF5DE",  color = "transparent")
   )
 
 ```
