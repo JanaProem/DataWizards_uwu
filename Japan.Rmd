@@ -69,7 +69,7 @@ p <- equality_long %>%
           text=element_text(family = "sans")) 
 ```
 
-![](images/Japan_equality.png)
+
 
 
 
