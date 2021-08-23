@@ -211,8 +211,10 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         plot.caption = element_text(size = 12, hjust = 0.5),
         strip.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
         text=element_text(family = "sans"))
-
+ggsave(p, filename = "images/Kreis_Japan.png", bg = "transparent")
 ```
+![](images\Kreis_Japan.png)
+
 In Japan werden vor allem Action-Filme produziert. Die meisten dieser Filme fallen beim Bechdel-Test durch, anders sieht es bei Horror-Filmen aus. Hier bestehen die meisten den Test. 
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
