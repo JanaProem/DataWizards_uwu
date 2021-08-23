@@ -78,8 +78,9 @@ equality_long %>%
 xaringanExtra::use_panelset()
 
 xaringanExtra::style_panelset_tabs(
-  active_foreground = "#9370db",
-  hover_foreground = "gray"
+  active_foreground = "#9B72AA",
+  hover_foreground = "black",
+  inactive_opacity = 0.5
 )
 ```
 
