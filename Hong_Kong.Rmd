@@ -45,7 +45,7 @@ names(equality_long) <- c("Gleichstellungsindex (Gesamtpunktzahl)", "Zugang zu B
 pivot_longer(equality_long,
             cols = everything(),
             names_to = "name", values_to = "score") -> equality_long
-equality_long
+
 equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Gesamtpunktzahl)", "ja", "nein")) -> equality_long
 
 library(forcats)
@@ -210,7 +210,6 @@ p <- ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
 ggsave(p, filename = "images/Kreis_Hong_Kong.png", bg = "transparent")
 ```
 ![](images/Kreis_Hong_Kong.png)
-```
 
 Insgesamt gibt es am meisten Adventure-, Action und Comedy-Filme, welche jedoch allesamt den Bechdel-Test nicht bestehen. Lediglich bei Drama- und Adventure-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist. Andere Genre gibt es deutlich weniger und sie haben in der Regel klare Tendenzen zum Durchfallen oder Bestehen.
 

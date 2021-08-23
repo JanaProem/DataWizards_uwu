@@ -20,7 +20,6 @@ library("openxlsx")
 library(knitr)
 library(ggforce)
 library(extrafont)
-loadfonts(device = "win")
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs

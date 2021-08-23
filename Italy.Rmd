@@ -20,7 +20,6 @@ library("openxlsx")
 library(knitr)
 library(ggforce)
 library(extrafont)
-#loadfonts(device = "win")
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -33,8 +32,8 @@ equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx",
                       sheet = 2)
 ```
 
-# Ergebnisse beim Gleichstellungsindex
-```{r, layout='1-page'}
+## Ergebnisse beim Gleichstellungsindex
+```{r, layout='1-page', fig.width=7, fig.height=3}
 equality_long <- equality %>%
   filter(Economy == "Italy") %>%
   select(ends_with("score"))
@@ -49,7 +48,7 @@ equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Ges
 
 library(forcats)
 
-p <- equality_long %>%
+equality_long %>%
   ggplot() +
     aes(y = fct_relevel(name, "Gleichstellungsindex (Gesamtpunktzahl)", 
                         "Zugang zur Justiz", "Zugang zu Behörden", 
@@ -60,25 +59,18 @@ p <- equality_long %>%
         xmin = 0, xmax = 100,
         fill = ToHighlight) +
     geom_col() +
-    labs(title = "Italien", x = "Erreichte Punktzahl", y = "") +
+    labs(x = "Erreichte Punktzahl", y = "", caption = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9B72AA", "nein" = "#C6B4CE"), guide = "none") +
     theme(plot.background = element_rect(fill = "#FFF5DE"), 
           panel.background = element_rect(fill = "#FFF5DE"),
           panel.grid = element_line(colour = "darkgray"),
           text=element_text(family = "sans")) 
-
-ggsave("images/Italy_equality.png", plot = p, height = 4, width = 9)
 ```
-
-![](images/Italy_equality.png)
-
-
 
 ### Hindernisse 
 
-
-```{r panelset, layout='l-body-outset', echo=FALSE}
+```{r panelset, layout='l-body', echo=FALSE}
 # Erstellung eines Panelsets
 xaringanExtra::use_panelset()
 
@@ -89,7 +81,7 @@ xaringanExtra::style_panelset_tabs(
 )
 ```
 
-:::l-body-outset
+:::l-body
 
 ::::: {.panelset}
 
@@ -110,26 +102,26 @@ Nach dem Gleichstellungsindex vom CFR hat Italien keine Hindernisse in diesem Be
 ::: {.panel}
 
 #### Kreditwürdigkeit {.panel-name}
-Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+1. Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 
-Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+2. Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 :::
 
 ::: {.panel}
 
 #### Schutz vor Gewalt {.panel-name}
-Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+1. Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
 
-Für sexuelle Belästigung am Arbeitsplatz gibt es keine strafrechtlichen Sanktionen.
+2. Für sexuelle Belästigung am Arbeitsplatz gibt es keine strafrechtlichen Sanktionen.
 
-Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
+3. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 
 :::
 
 ::: {.panel}
 
 #### Zugang zu Arbeit {.panel-name}
-Es existiert ein gesetzlich geregelter, bezahlter Vaterschaftsurlaub, der jedoch unter dem weltweiten Median von vier Tagen liegt.
+1. Es existiert ein gesetzlich geregelter, bezahlter Vaterschaftsurlaub, der jedoch unter dem weltweiten Median von vier Tagen liegt.
 :::
 
 ::: {.panel}
@@ -142,7 +134,7 @@ Nach dem Gleichstellungsindex vom CFR hat Italien keine Hindernisse in diesem Be
 ::: {.panel}
 
 #### Zugang zur Justiz {.panel-name}
-Das Gesetz sieht keine Antidiskriminierungskommission vor.
+1. Das Gesetz sieht keine Antidiskriminierungskommission vor.
 :::
 
 :::::
@@ -152,6 +144,7 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 
 ## Ergebnisse beim Bechdel-Test
 Mehr als die Hälfte der in Italien produzierten Filme bestehen den Bechdel-Test nicht – 8 der 23 Filme bestehen alle Kriterien. Vor allem fallen Filme durch, wenn weibliche Rollen nicht miteinander sprechen. Allerdings ist die Bewertung bei vier Filmen unsicher.
+
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
 mutate(bechdel2, criteria = recode(clean_test, 
@@ -172,10 +165,16 @@ bechdel2 %>%
   filter(country == "Italy") %>% 
   count(criteria) -> data_kreis
 
-ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
+p <- ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
+  scale_fill_manual(values = c("Es gibt weniger als 2 Frauen" = "#3C5186",
+                               "Frauen reden nicht miteinander" = "#5371bd",
+                               "Frauen reden nur über Männer" = "#6488e8",
+                               "Film besteht alle Kriterien" = "#9B72AA",
+                               "Bewertung ist unsicher" = "#C6B4CE"
+                               )) +
       geom_text(aes(label = paste0(n), fontface = "bold"), position = position_stack(vjust = 0.5), color = "white") +
       scale_y_continuous(breaks = 0:14) +
       labs(x = NULL, y = NULL, fill = NULL,
@@ -195,6 +194,8 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
 
 ggsave(p, filename = "images/Kreis_Italy.png", bg = "transparent")
 ```
+
+![](images\Kreis_Italy.png)
 
 Betrachten wir die Genres, fällt auf, dass Dramen am meisten durchfallen. Zu beachten ist, dass dies das am meisten produzierte Genre ist. Mit großem Abstand folgen Thriller, Crime und Action. 
 
@@ -216,7 +217,8 @@ bechdel_genre %>%
     theme_minimal()+
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
-     scale_fill_manual(values = c(durchgefallen = "#e88794", bestanden = "#6488e8")) +
+    scale_x_continuous(breaks = c(0, 2, 4, 6, 8, 10, 12)) +
+    scale_fill_manual(values = c(durchgefallen = "#e88794", bestanden = "#6488e8")) +
     theme(
           axis.text=element_text(size=10),    
           panel.border=element_blank(),
@@ -228,5 +230,6 @@ bechdel_genre %>%
 
 
 ```
+
 ## Fazit
 Italien schneidet beim Gleichstellungsindex gut ab. Das spiegelt sich allerdings nicht in der Filmlandschaft wider, da 65 % der Filme den Bechdel-Test nicht bestehen. Der Hauptgrund hierfür ist, dass die Frauen in den Filmen nicht miteinander reden. Immerhin bestehen etwa die Hälfte der Dramen den Bechdel-Test. 

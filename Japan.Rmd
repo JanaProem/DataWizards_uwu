@@ -20,7 +20,6 @@ library("openxlsx")
 library(knitr)
 library(ggforce)
 library(extrafont)
-#loadfonts(device = "win")
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -33,8 +32,8 @@ equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx",
                       sheet = 2)
 ```
 
-# Ergebnisse beim Gleichstellungsindex
-```{r, layout='1-page'}
+## Ergebnisse beim Gleichstellungsindex
+```{r, layout='1-page', fig.width=7, fig.height=3}
 equality_long <- equality %>%
   filter(Economy == "Japan") %>%
   select(ends_with("score"))
@@ -49,7 +48,7 @@ equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Ges
 
 library(forcats)
 
-p <- equality_long %>%
+equality_long %>%
   ggplot() +
     aes(y = fct_relevel(name, "Gleichstellungsindex (Gesamtpunktzahl)", 
                         "Zugang zur Justiz", "Zugang zu Behörden", 
@@ -60,7 +59,7 @@ p <- equality_long %>%
         xmin = 0, xmax = 100,
         fill = ToHighlight) +
     geom_col() +
-    labs(title = "Japan", x = "Erreichte Punktzahl", y = "") +
+    labs(x = "Erreichte Punktzahl", y = "", caption = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9B72AA", "nein" = "#C6B4CE"), guide = "none") +
     theme(plot.background = element_rect(fill = "#FFF5DE"), 
@@ -69,12 +68,7 @@ p <- equality_long %>%
           text=element_text(family = "sans")) 
 ```
 
-
-
-
-
 ### Hindernisse 
-
 
 ```{r panelset, layout='l-body-outset', echo=FALSE}
 # Erstellung eines Panelsets
@@ -87,7 +81,7 @@ xaringanExtra::style_panelset_tabs(
 )
 ```
 
-:::l-body-outset
+:::l-body
 
 ::::: {.panelset}
 
@@ -95,9 +89,9 @@ xaringanExtra::style_panelset_tabs(
 
 #### Finanzieller Arbeitsanreiz {.panel-name}
 
-Frauen wird nach dem Mutterschutz keine gleichwertige Position garantiert.
+1. Frauen wird nach dem Mutterschutz keine gleichwertige Position garantiert.
 
-Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
+2. Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
 :::
 
 ::: {.panel}
@@ -110,39 +104,39 @@ Nach dem Gleichstellungsindex vom CFR hat Japan keine Hindernisse in diesem Bere
 ::: {.panel}
 
 #### Kreditwürdigkeit {.panel-name}
-Versorgungsunternehmen geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+1. Versorgungsunternehmen geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 
-DEs existiert kein Gesetz, das Gläubigern die Diskriminierung nach Geschlecht oder der sexuellen Orientierung.
+2. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Geschlecht oder der sexuellen Orientierung.
 
-Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
+3. Es existiert kein Gesetz, das Gläubigern die Diskriminierung nach Familienstand verbietet.
 :::
 
 ::: {.panel}
 
 #### Schutz vor Gewalt {.panel-name}
-Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
+1. Es existiert kein Gesetz, das sexuelle Belästigung am Arbeitsplatz verbietet.
 
-Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
+2. Es existiert kein Gesetz, das sexuelle Belästigung in Schulen verbietet.
 
-Es gibt keine strafrechtlichen Sanktionen für sexuelle Belästigung am Arbeitsplatz.
+3. Es gibt keine strafrechtlichen Sanktionen für sexuelle Belästigung am Arbeitsplatz.
 
-Es gibt keine zivilrechtlichen Rechtsbehelfe für sexuelle Belästigung am Arbeitsplatz.
+4. Es gibt keine zivilrechtlichen Rechtsbehelfe für sexuelle Belästigung am Arbeitsplatz.
 
-Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
+5. Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
 
-Es existiert kein eindeutiges Gesetz, das häusliche Gewalt verbietet.
+6. Es existiert kein eindeutiges Gesetz, das häusliche Gewalt verbietet.
 
-Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
+7. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 
 #### Zugang zu Arbeit {.panel-name}
-Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
+1. Es existiert kein Gesetz, das eine gleiche Vergütung bei gleicher Arbeit regelt.
 
-Frauen dürfen nicht in denselben Branchen arbeiten wie Männer.
+2. Frauen dürfen nicht in denselben Branchen arbeiten wie Männer.
 
-Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
+3. Es existiert kein gesetzlich geregelter, bezahlter Vaterschaftsurlaub.
 :::
 
 ::: {.panel}
@@ -155,7 +149,7 @@ Nach dem Gleichstellungsindex vom CFR hat Japan keine Hindernisse in diesem Bere
 ::: {.panel}
 
 #### Zugang zur Justiz {.panel-name}
-Das Gesetz sieht keine Antidiskriminierungskommission vor.
+1. Das Gesetz sieht keine Antidiskriminierungskommission vor.
 :::
 
 :::::
@@ -163,8 +157,9 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 :::
 
 
-# Ergebnisse beim Bechdel-Test
+## Ergebnisse beim Bechdel-Test
 Fast 60 % der in Japan produzierten Filme fallen beim Bechdel-Test durch, wobei die Bewertung für 5 der 14 durchgefallenen Filme unsicher ist. Genauso häufig reden die weiblichen Rollen in den Fimen nicht miteinander. 
+
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
 mutate(bechdel2, criteria = recode(clean_test, 
@@ -185,7 +180,7 @@ bechdel2 %>%
   filter(country == "Japan") %>% 
   count(criteria) -> data_kreis
 
-ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
+p <- ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
@@ -211,11 +206,14 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         plot.caption = element_text(size = 12, hjust = 0.5),
         strip.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
         text=element_text(family = "sans"))
+
 ggsave(p, filename = "images/Kreis_Japan.png", bg = "transparent")
 ```
+
 ![](images\Kreis_Japan.png)
 
 In Japan werden vor allem Action-Filme produziert. Die meisten dieser Filme fallen beim Bechdel-Test durch, anders sieht es bei Horror-Filmen aus. Hier bestehen die meisten den Test. 
+
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
 bechdel2 %>%
@@ -234,6 +232,7 @@ bechdel_genre %>%
     theme_minimal()+
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
+    scale_x_continuous(breaks = c(0, 2, 4, 6, 8, 10)) +  
     scale_fill_manual(values = c(durchgefallen = "#e88794", bestanden = "#6488e8")) +
     theme(
           axis.text=element_text(size=10),    
@@ -245,6 +244,7 @@ bechdel_genre %>%
           plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
 
 ```
+
 ## Fazit
 Sowohl filmtechnisch als auch bezüglich der Gleichstellung schneidet Japan nicht gut ab: Der Gleichstellungsindex bescheinigt ein mittleres Ergebnis und die Filme zeichnen ein ähnliches Bild ab. Zu beachten ist aber, dass bei einigen Filmen die Bewertung des Bechdel-Tests unsicher war. 
 Action-Filme werden in Japan am meisten produziert und fallen zum größten Teil beim Bechdel-Test durch. 

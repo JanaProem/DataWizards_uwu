@@ -20,7 +20,6 @@ library("openxlsx")
 library(knitr)
 library(ggforce)
 library(extrafont)
-#loadfonts(device = "win")
 
 bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-09/movies.csv')
 # Trennung bei Länder-Kombinationen und Entfernung NAs
@@ -33,8 +32,8 @@ equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx",
                       sheet = 2)
 ```
 
-# Ergebnisse beim Gleichstellungsindex
-```{r, layout='1-page'}
+## Ergebnisse beim Gleichstellungsindex
+```{r, layout='1-page', fig.width=7, fig.height=3}
 equality_long <- equality %>%
   filter(Economy == "Ireland") %>%
   select(ends_with("score"))
@@ -49,7 +48,7 @@ equality_long %>% mutate(ToHighlight = ifelse(name == "Gleichstellungsindex (Ges
 
 library(forcats)
 
-p <- equality_long %>%
+equality_long %>%
   ggplot() +
     aes(y = fct_relevel(name, "Gleichstellungsindex (Gesamtpunktzahl)", 
                         "Zugang zur Justiz", "Zugang zu Behörden", 
@@ -60,25 +59,19 @@ p <- equality_long %>%
         xmin = 0, xmax = 100,
         fill = ToHighlight) +
     geom_col() +
-    labs(title = "Irland", x = "Erreichte Punktzahl", y = "") +
+    labs(x = "Erreichte Punktzahl", y = "", caption = "") +
     scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_manual(values = c("ja" = "#9B72AA", "nein" = "#C6B4CE"), guide = "none") +
     theme(plot.background = element_rect(fill = "#FFF5DE"), 
           panel.background = element_rect(fill = "#FFF5DE"),
           panel.grid = element_line(colour = "darkgray"),
           text=element_text(family = "sans")) 
-
-ggsave("images/Irland_equality.png", plot = p, height = 4, width = 9)
 ```
-
-![](images/Irland_equality.png)
-
 
 
 ### Hindernisse 
 
-
-```{r panelset, layout='l-body-outset', echo=FALSE}
+```{r panelset, layout='l-body', echo=FALSE}
 # Erstellung eines Panelsets
 xaringanExtra::use_panelset()
 
@@ -89,7 +82,7 @@ xaringanExtra::style_panelset_tabs(
 )
 ```
 
-:::l-body-outset
+:::l-body
 
 ::::: {.panelset}
 
@@ -97,44 +90,44 @@ xaringanExtra::style_panelset_tabs(
 
 #### Finanzieller Arbeitsanreiz {.panel-name}
 
-Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
+1. Leistungen für die Betreuung von Kindern ist nicht steuerlich absetzbar.
 :::
 
 ::: {.panel}
 
 #### Grundstücknutzung {.panel-name}
 
-Nach dem Gleichstellungsindex vom CFR hat Irland keine Hindernisse in diesem Bereich.
+1. Nach dem Gleichstellungsindex vom CFR hat Irland keine Hindernisse in diesem Bereich.
 :::
 
 ::: {.panel}
 
 #### Kreditwürdigkeit {.panel-name}
-Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
+1. Einzelhändler geben keine Informationen an private Kreditbüros oder öffentliche Kreditregister weiter, was Frauen daran hindert, ihre Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalten.
 
-Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalte
+2. Versorgungsunternehmen stellen keine Informationen für private Kreditbüros oder öffentliche Kreditregister zur Verfügung, was Frauen daran hindert, sich eine Kredithistorie aufzubauen, um Zugang zu Finanzmitteln zu erhalte
 :::
 
 ::: {.panel}
 
 #### Schutz vor Gewalt {.panel-name}
-Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
+1. Es existiert kein Gesetz, das Vergewaltigung in der Ehe verbietet.
 
-Es gibt keine klaren strafrechtlichen Folgen für häusliche Gewalt.
+2. Es gibt keine klaren strafrechtlichen Folgen für häusliche Gewalt.
 
-Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
+3. Mit Zustimmung der Eltern oder richterlicher Genehmigung liegt das Mindestheiratsalter für Mädchen unter 18 Jahren.
 :::
 
 ::: {.panel}
 
 #### Zugang zu Arbeit {.panel-name}
-Frauen erhalten weniger als zwei Drittel ihres Lohns für die ersten vierzehn Wochen ihres Urlaubs bzw. für die Dauer des Urlaubs, wenn dieser kürzer ist.
+1. Frauen erhalten weniger als zwei Drittel ihres Lohns für die ersten vierzehn Wochen ihres Urlaubs bzw. für die Dauer des Urlaubs, wenn dieser kürzer ist.
 
-Es existiert keine gesetzlich geregelte, bezahlte Elternzeit.
+2. Es existiert keine gesetzlich geregelte, bezahlte Elternzeit.
 
-Eltern können nicht flexibel arbeiten.
+3. Eltern können nicht flexibel arbeiten.
 
-Irland hat einen zehntägigen bezahlten Vaterschaftsurlaub eingeführt.
+4. Irland hat einen zehntägigen bezahlten Vaterschaftsurlaub eingeführt.
 :::
 
 ::: {.panel}
@@ -147,7 +140,7 @@ Nach dem Gleichstellungsindex vom CFR hat Irland keine Hindernisse in diesem Ber
 ::: {.panel}
 
 #### Zugang zur Justiz {.panel-name}
-Das Gesetz sieht keine Antidiskriminierungskommission vor.
+1. Das Gesetz sieht keine Antidiskriminierungskommission vor.
 :::
 
 :::::
@@ -156,7 +149,8 @@ Das Gesetz sieht keine Antidiskriminierungskommission vor.
 
 
 ## Ergebnisse beim Bechdel-Test
-Fast 60 % der Filme, die in Irland produziert sind, bestehen den Test nicht =  hauptsächlich, weil die weiblichen Rollen nicht miteinander reden. Ein weiterer am häufigsten vertretener Grund ist, dass es weiner als zwei Frauen im Film gibt.
+Fast 60 % der Filme, die in Irland produziert sind, bestehen den Test nicht – hauptsächlich, weil die weiblichen Rollen nicht miteinander reden. Ein weiterer am häufigsten vertretener Grund ist, dass es weiner als zwei Frauen im Film gibt.
+
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
 mutate(bechdel2, criteria = recode(clean_test, 
@@ -177,10 +171,16 @@ bechdel2 %>%
   filter(country == "Ireland") %>% 
   count(criteria) -> data_kreis
 
-ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
+p <- ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
+  scale_fill_manual(values = c("Es gibt weniger als 2 Frauen" = "#3C5186",
+                               "Frauen reden nicht miteinander" = "#5371bd",
+                               "Frauen reden nur über Männer" = "#6488e8",
+                               "Film besteht alle Kriterien" = "#9B72AA",
+                               "Bewertung ist unsicher" = "#C6B4CE"
+                               )) +
       geom_text(aes(label = paste0(n), fontface = "bold"), position = position_stack(vjust = 0.5), color = "white") +
       scale_y_continuous(breaks = 0:14) +
       labs(x = NULL, y = NULL, fill = NULL,
@@ -197,10 +197,13 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         plot.caption = element_text(size = 12, hjust = 0.5),
         strip.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
         text=element_text(family = "sans"))
+
 ggsave(p, filename = "images/Kreis_Ireland.png", bg = "transparent")
 ```
+![](images\Kreis_Ireland.png)
 
 Am meisten wird in Irland Romance produziert. In dem Genre bestehen drei von vier Filmen den Bechdel-Test. Thriller und Action fallen jedoch komplett durch. Adventure-Filme fallen zum Großteil durch. 
+
 ```{r}
 # Vergleich der bestandenen/durchgefallenen Filme pro Genre
 bechdel2 %>%
@@ -230,5 +233,6 @@ bechdel_genre %>%
           plot.caption = element_text(size = 12, hjust = 0.5, vjust = -1))
 
 ```
+
 ## Fazit
 Bezüglich der Gleichstellung steht Irland gut da, aber dies hat keinen Einfluss auf die dort produzierten Filme. Mehr als die Hälfte fallen beim Bechdel-Test durch, vor allem da Frauen nicht miteinander sprechen. Thriller-, Action- und Adventure-Filme bestehen den Test am meisten nicht. Romance hingegen besteht den Test am meisten. 
