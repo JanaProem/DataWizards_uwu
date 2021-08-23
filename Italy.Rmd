@@ -79,7 +79,14 @@ ggsave("images/Italy_equality.png", plot = p, height = 4, width = 9)
 
 
 ```{r panelset, layout='l-body-outset', echo=FALSE}
+# Erstellung eines Panelsets
 xaringanExtra::use_panelset()
+
+xaringanExtra::style_panelset_tabs(
+  active_foreground = "#9B72AA",
+  hover_foreground = "black",
+  inactive_opacity = 0.5
+)
 ```
 
 :::l-body-outset

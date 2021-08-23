@@ -77,7 +77,14 @@ p <- equality_long %>%
 
 
 ```{r panelset, layout='l-body-outset', echo=FALSE}
+# Erstellung eines Panelsets
 xaringanExtra::use_panelset()
+
+xaringanExtra::style_panelset_tabs(
+  active_foreground = "#9B72AA",
+  hover_foreground = "black",
+  inactive_opacity = 0.5
+)
 ```
 
 :::l-body-outset
@@ -182,6 +189,12 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
+  scale_fill_manual(values = c("Es gibt weniger als 2 Frauen" = "#3C5186",
+                               "Frauen reden nicht miteinander" = "#5371bd",
+                               "Frauen reden nur über Männer" = "#6488e8",
+                               "Film besteht alle Kriterien" = "#9B72AA",
+                               "Bewertung ist unsicher" = "#C6B4CE"
+                               )) +
       geom_text(aes(label = paste0(n), fontface = "bold"), position = position_stack(vjust = 0.5), color = "white") +
       scale_y_continuous(breaks = 0:14) +
       labs(x = NULL, y = NULL, fill = NULL,
@@ -199,7 +212,6 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         strip.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
         text=element_text(family = "sans"))
 
-ggsave(p, filename = "images/Kreis_Japan.png", bg = "transparent")
 ```
 In Japan werden vor allem Action-Filme produziert. Die meisten dieser Filme fallen beim Bechdel-Test durch, anders sieht es bei Horror-Filmen aus. Hier bestehen die meisten den Test. 
 ```{r}
