@@ -3,9 +3,6 @@ title: "Irland"
 description: |
   Gleichstellungsindex (erreichte Punktzahl): 80,4   
   8 der 14 produzierten Filme sind beim Bechdel-Test durchgefallen
-  title: "TOC in German"
-header-includes:
-  - \usepackage[ngerman]{babel}
 output:
   distill::distill_article:
     toc: true

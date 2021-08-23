@@ -68,18 +68,21 @@ map_data <- bechdel_countriesFail %>%
   inner_join(df, by = "country") %>%
   mutate(hover = paste0(country, "\n", Durchfallquote, "%"))
 
+t <- list(family = "Arial")
+
 map <- plot_geo(map_data,
                locationmode = "country names") %>%
   add_trace(locations = ~country,
             z = ~Durchfallquote,
             color = ~Durchfallquote,
-            colorscale = "Electric",
+            colorscale = list(c(0, 1), c("#FFF5DE", "#4b2ab7")),
             text = ~hover,
-            hoverinfo = "text") %>%
+            hoverinfo = "text") %>% 
   layout(width = 1130, height = 575,
-         title = "Durchfallquote beim Bechdel-Test",
-         plot_bgcolor='#FFF5DE',
-         paper_bgcolor='#FFF5DE') %>%
+         title = "<b>Durchfallquote beim Bechdel-Test<b>",
+         plot_bgcolor = "#FFF5DE",
+         paper_bgcolor = "#FFF5DE",
+         font = t) %>%
   colorbar(ticksuffix = "%") 
 
 map
@@ -89,19 +92,23 @@ map
 ## Verschub
 
 ## Der erste Blick zeigt...
-
   
 ```{r layout='l-body-outset', fig.width=8, fig.height=3}
 # Diagramm zum Bechdel-Test
 bechdel_countriesFail %>%
 ggplot() +
   aes(x = Durchfallquote, y = reorder(country, desc(Durchfallquote)), xmin = 0, xmax = 100) +
-  geom_col() +
+  geom_col(fill = "#C6B4CE") +
   scale_x_continuous(limits = c(0, 100), 
                      breaks = c(0, 20, 40, 60,  80, 100)) +
   labs(x = "Bechdel-Test-Durchfallquote (in %)",
        y = NULL) +
-  theme(axis.text=element_text(size=10)) -> plot_bechdel
+  theme(axis.text=element_text(size=10),
+          panel.border=element_blank(),
+          panel.grid = element_line(colour = "darkgray"),
+          panel.background =element_blank(),
+          text=element_text(family = "sans"),
+          plot.background = element_rect(fill = "#FFF5DE",  color = "transparent")) -> plot_bechdel
 
 
 equality <- read.xlsx(xlsxFile = "data/Equality_Index.xlsx", sheet = 2)
@@ -115,14 +122,20 @@ equality %>%
 equality %>%
 ggplot() +
   aes(x = OVERALL.AVERAGE.SCORE, y = reorder(Economy, OVERALL.AVERAGE.SCORE), xmin = 0, xmax = 100) +
-  geom_col() +
+  geom_col(fill = "#C6B4CE") +
   scale_x_continuous(limits = c(0, 100), 
                      breaks = c(0, 20, 40, 60,  80, 100)) +
   labs(x = "Gleichstellungsindex (Gesamtpunktzahl)",
        y = NULL) +
-  theme(axis.text=element_text(size=10)) -> plot_equality
+  theme(axis.text=element_text(size=10),
+          panel.border=element_blank(),
+          panel.grid = element_line(colour = "darkgray"),
+          panel.background =element_blank(),
+          text=element_text(family = "sans"),
+          plot.background = element_rect(fill = "#FFF5DE",  color = "transparent")) -> plot_equality
 
-plot_bechdel + plot_equality
+plot_bechdel + plot_equality &
+  plot_annotation(theme = theme(plot.background = element_rect(fill  = "#FFF5DE",  color = "transparent", size = 0)))
 ```
 
 Bis auf China und Japan erzielen alle Länder eine hohe Gesamtpunktzahl in dem Gleichstellungsindex – trotzdem schwankt ihre Durchfallquote beim Bechdel-Test um über 30%. Teils unterscheidet sich, wie gut sich das Land in beiden Scores schlägt, teils ähneln sich die Ergebnisse. Die Frage, ob Filme einen Spiegel der Gesellschaft in Bezug auf Gleichstellung darstellen, bleibt somit Ländersache...
@@ -140,12 +153,14 @@ bechdel %>%
   geom_line() +
   labs(x = "Jahr der Veröffentlichung", y = "Anzahl Filme",
        caption = "Zeitlicher Verlauf der beim Bechdel-Test durchgefallenen vs. bestandenen Filme") +
+  scale_color_manual(values = c(durchgefallen = "#ff696c", bestanden = "#6488e8")) +
   theme(
           axis.text=element_text(size=10),    
           panel.border=element_blank(),
-          plot.background = element_blank(), 
-          legend.background = element_blank(), 
-          legend.box.background = element_rect(fill = "white"),
+          panel.grid = element_line(colour = "darkgray"),
+          panel.background =element_blank(),
+          plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
+          legend.background = element_rect(fill = "white", color = "black"),
           plot.caption = element_text(size = 12, hjust = 0.3, vjust = -1))
   
 

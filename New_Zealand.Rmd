@@ -157,7 +157,7 @@ bechdel2 %>%
   filter(country == "New Zealand") %>% 
   count(criteria) -> data_kreis
 
-ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
+p <- ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
       geom_bar(stat="identity", width=1) +
       coord_polar("y", start=0) +
       theme_minimal()+
@@ -167,7 +167,7 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
                                "Film besteht alle Kriterien" = "#9B72AA",
                                "Bewertung ist unsicher" = "#C6B4CE"
                                )) +
-      geom_text(aes(label = paste0(n)), position = position_stack(vjust = 0.5), color = "white") +
+      geom_text(aes(label = paste0(n), fontface = "bold"), position = position_stack(vjust = 0.5), color = "white") +
       scale_y_continuous(breaks = 0:14) +
       labs(x = NULL, y = NULL, fill = NULL,
            caption = "Ergebnisse des Bechdel-Tests: Anzahl der Filme") +
@@ -180,11 +180,13 @@ ggplot(data_kreis, aes(x="", y=desc(n), fill=criteria)) +
         plot.background = element_rect(fill = "#FFF5DE",  color = "transparent"), 
         panel.grid = element_blank(),
         legend.background = element_rect(fill = "white", color = "black"),
-        plot.title = element_text(face = "bold"), ## funktioniert nicht???
         plot.caption = element_text(size = 12, hjust = 0.5),
         strip.background = element_rect(fill = "#FFF5DE",  color = "transparent"),
         text=element_text(family = "sans"))
+
+ggsave(p, filename = "images/Kreis_New_Zealand.png", bg = "transparent")
 ```
+![](images\Kreis_New_Zealand.png)
 
 Insgesamt gibt es am meisten Adventure- und Action-Filme, welche jedoch allesamt den Bechdel-Test nicht bestehen. Lediglich bei Drama-Filmen kann gesagt werden, dass die Durchfall- und Bestehensquote in etwa ausgeglichen ist.
 
@@ -206,7 +208,7 @@ bechdel_genre %>%
     theme_minimal()+
     scale_x_continuous() +
     labs(x = "Anzahl der Filme", y = NULL, fill = NULL, caption = "Ergebnisse des Bechdel-Tests nach Genre") +
-    scale_fill_manual(values = c(durchgefallen = "#ff696c", bestanden = "#5371bd")) +
+    scale_fill_manual(values = c(durchgefallen = "#e88794", bestanden = "#6488e8")) +
     theme(
           axis.text=element_text(size=10),    
           panel.border=element_blank(),
