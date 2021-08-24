@@ -149,7 +149,7 @@ Nach dem Gleichstellungsindex vom CFR hat Irland keine Hindernisse in diesem Ber
 
 
 ## Ergebnisse beim Bechdel-Test
-Fast 60 % der Filme, die in Irland produziert sind, bestehen den Test nicht – hauptsächlich, weil die weiblichen Rollen nicht miteinander reden. Ein weiterer am häufigsten vertretener Grund ist, dass es weiner als zwei Frauen im Film gibt.
+Fast 60 % der Filme, die in Irland produziert sind, bestehen den Test nicht – hauptsächlich, weil die weiblichen Rollen nicht miteinander reden. Ein weiterer am häufigsten vertretener Grund ist, dass es weniger als zwei Frauen im Film gibt.
 
 ```{r}
 # Kreisdiagramm oder ridgeline Plot für die Bewertungskriterien
