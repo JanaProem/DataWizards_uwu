@@ -17,4 +17,4 @@ Verwendet haben wir einen der [Bechdel-Datensätze](https://github.com/rfordatas
 
 ## Gleichstellungsindex
 Der Gleichstellungsindex (offiziell: Women's Workplace Equality Index) vom Council on Foreign Relations (CFR) maß 2018 für 189 Länder weltweit anhand von spezifischen Kriterien die Gleichstellung der Frau. Er spezialisiert sich dabei auf Hindernisse zur ökonomischen Teilhabe. Basierend auf den Kriterien ergeben sich 7 Subskalen sowie eine Gesamtpunktzahl. Die Gesamtpunktzahl kann zwischen 0 und 100 Punkten liegen. Von einer hohen Punktzahl wird bei 76-100, von einer mittleren bei 51-75 und von einer niedrigen bei <50 Punkten gesprochen.  
-Der Datensatz, welchen wir verwendet haben, kann direkt auf der [Webseite](https://www.cfr.org/legal-barriers/country-rankings/) heruntergeladen werden.
+Der Datensatz, welchen wir verwendet haben, kann direkt auf der [Webseite](https://www.cfr.org/legal-barriers/country-rankings/) zum Index heruntergeladen werden.
